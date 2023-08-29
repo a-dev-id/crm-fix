@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Booking extends Model
 {
@@ -23,4 +24,24 @@ class Booking extends Model
         'remarks',
         'status',
     ];
+
+    /**
+     * Get the user that owns the Booking
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function guest(): BelongsTo
+    {
+        return $this->belongsTo(Guest::class, 'guest_id', 'id');
+    }
+
+    /**
+     * Get the user that owns the Booking
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function villa(): BelongsTo
+    {
+        return $this->belongsTo(Villa::class, 'villa_id', 'id');
+    }
 }

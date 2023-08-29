@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('birth_date')->nullable();
             $table->string('identity')->nullable();
             $table->string('credit_card')->nullable();
-            $table->integer('booking_id')->nullable();
+            $table->integer('booking_number')->nullable();
             $table->timestamps();
         });
     }

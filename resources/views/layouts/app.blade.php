@@ -13,6 +13,15 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{asset('vendors/sb-admin')}}/css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{asset('vendors/sb-admin')}}/assets/img/favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+
+
+    <style>
+        .ck-editor__editable {
+            min-height: 200px;
+        }
+
+    </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -33,10 +42,13 @@
                         </div>
                     </h6>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#!">
-                        <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
-                        Logout
-                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); this.closest('form').submit();">
+                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                            Logout
+                        </a>
+                    </form>
                 </div>
             </li>
         </ul>
@@ -54,6 +66,10 @@
                         <a class="nav-link @yield('booking_active')" href="{{route('booking.index')}}">
                             <div class="nav-link-icon"><i class="fa-solid fa-bell-concierge"></i></div>
                             Bookings
+                        </a>
+                        <a class="nav-link @yield('guest_active')" href="{{route('guest.index')}}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                            Guests
                         </a>
                     </div>
                 </div>
@@ -82,13 +98,29 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="{{asset('vendors/sb-admin')}}/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="{{asset('vendors/sb-admin')}}/js/datatables/datatables-simple-demo.js"></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#campaign-benefit' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#remarks' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 </body>
 
 </html>

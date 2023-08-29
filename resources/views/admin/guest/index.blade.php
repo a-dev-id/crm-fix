@@ -1,5 +1,5 @@
-@section('title', 'Bookings')
-@section('booking_active', 'active')
+@section('title', 'Guests')
+@section('guest_active', 'active')
 <x-app-layout>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -7,12 +7,12 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-users"></i></div>
                             @yield('title')
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
-                        <a href="{{route('booking.create')}}" class="btn btn-success text-uppercase fw-bold shadow-lg"><i class="fa-solid fa-circle-plus me-1"></i> add new</a>
+                        <a href="{{route('guest.create')}}" class="btn btn-success text-uppercase fw-bold shadow-lg"><i class="fa-solid fa-circle-plus me-1"></i> add new</a>
                     </div>
                 </div>
             </div>
@@ -35,27 +35,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($bookings as $data)
                         <tr>
-                            <td>{{$data->booking_number}}</td>
-                            <td>{{$data->guest->title." ".$data->guest->full_name}}</td>
-                            <td>{{$data->guest->country}}</td>
-                            <td>{{$data->arrival}}</td>
-                            <td>{{$data->departure}}</td>
-                            <td>{{$data->villa->title}}</td>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>61</td>
                             <td>
-                                @if ($data->status == '0')
-                                <div class="badge bg-warning rounded-pill"><i class="fa-solid fa-clock"></i> On progress</div>
-                                @else
-                                <div class="badge bg-success rounded-pill"><i class="fa-solid fa-circle-check"></i> Success</div>
-                                @endif
+                                <div class="badge bg-warning rounded-pill"><i class="fa-regular fa-clock"></i> On progress</div>
                             </td>
                             <td>
                                 <button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 <button class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-regular fa-trash-can"></i></button>
                             </td>
                         </tr>
-                        @endforeach
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>61</td>
+                            <td>
+                                <div class="badge bg-success rounded-pill"><i class="fa-regular fa-circle-check"></i> Success</div>
+                            </td>
+                            <td>
+                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                <button class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-regular fa-trash-can"></i></button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

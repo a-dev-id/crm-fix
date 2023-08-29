@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::get('/', function () {
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('/', DashboardController::class);
     Route::resource('booking', BookingController::class);
+    Route::resource('guest', GuestController::class);
 });
 
 require __DIR__ . '/auth.php';
