@@ -51,8 +51,8 @@
                                 @endif
                             </td>
                             <td>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-regular fa-trash-can"></i></button>
+                                <a href="{{route('booking.edit',[$data->id])}}" class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
+                                <button class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-regular fa-trash-can text-danger"></i></button>
                             </td>
                         </tr>
                         @endforeach
