@@ -72,7 +72,12 @@ class BookingController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $detail = Booking::find($id);
+        $guests = Guest::all();
+        $villas = Villa::all();
+        $titles = Title::all();
+        $countries = Country::all();
+        return view('admin.booking.edit')->with(compact('detail', 'guests', 'villas', 'titles', 'countries'));
     }
 
     /**
@@ -80,7 +85,21 @@ class BookingController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Booking::find($id);
+        $data->guest_id = $request->guest_id;
+        $data->booking_number = $request->booking_number;
+        $data->arrival = $request->arrival;
+        $data->departure = $request->departure;
+        $data->adult = $request->adult;
+        $data->child = $request->child;
+        $data->villa_id = $request->villa_id;
+        $data->total_charge = $request->total_charge;
+        $data->campaign_name = $request->campaign_name;
+        $data->campaign_benefit = $request->campaign_benefit;
+        $data->remarks = $request->remarks;
+        $data->status = '0';
+        $data->save();
+        return redirect()->route('booking.index')->with('message', 'New booking created Successfully');
     }
 
     /**
@@ -88,6 +107,9 @@ class BookingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Booking::find($id);
+        $data->delete();
+
+        return redirect()->route('booking.index')->with('message', 'Item deleted Successfully');
     }
 }
