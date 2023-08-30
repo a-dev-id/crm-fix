@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{asset('vendors/sb-admin')}}/css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{asset('vendors/sb-admin')}}/assets/img/favicon.png" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
 
     <style>
@@ -99,7 +99,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -107,6 +106,7 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="{{asset('vendors/sb-admin')}}/js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
     <script>
         ClassicEditor
         .create( document.querySelector( '#campaign-benefit' ) )
@@ -120,6 +120,43 @@
             .catch( error => {
                 console.error( error );
             } );
+    </script>
+    <script>
+        const autoCloseElements = document.querySelectorAll(".auto-close");
+        
+        function fadeAndSlide(element) {
+            const fadeDuration = 500;
+            const slideDuration = 500;
+
+            let opacity = 1;
+            const fadeInterval = setInterval(function () {
+                if (opacity > 0) {
+                    opacity -= 0.1;
+                    element.style.opacity = opacity;
+                } else {
+                    clearInterval(fadeInterval);
+                    let height = element.offsetHeight;
+                    const slideInterval = setInterval(function () {
+                        if (height > 0) {
+                            height -= 10;
+                            element.style.height = height + "px";
+                        } else {
+                            clearInterval(slideInterval);
+                            element.parentNode.removeChild(element);
+                        }
+                    }, slideDuration / 10);
+                }
+            }, fadeDuration / 10);
+        }
+        
+        setTimeout(function () {
+            autoCloseElements.forEach(function (element) {
+                fadeAndSlide(element);
+            });
+        }, 5000);
+    </script>
+    <script>
+        $('.guest_id').selectpicker();
     </script>
 </body>
 

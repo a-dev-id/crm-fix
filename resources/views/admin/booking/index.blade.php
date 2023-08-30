@@ -19,6 +19,17 @@
         </div>
     </header>
     <div class="container-xl px-4 mt-n10">
+
+        @if (session('message'))
+        <div class="row auto-close">
+            <div class="col-12">
+                <div class="alert alert-success" role="alert">
+                    <i class="fa-solid fa-circle-check me-1"></i> {{ session('message') }}
+                </div>
+            </div>
+        </div>
+        @endif
+
         <div class="card mb-4">
             <div class="card-body">
                 <table id="datatablesSimple">
@@ -52,7 +63,30 @@
                             </td>
                             <td>
                                 <a href="{{route('booking.edit',[$data->id])}}" class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
-                                <button class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-regular fa-trash-can text-danger"></i></button>
+                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->booking_number}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
+
+                                {{-- Delete Modal --}}
+                                <div class="modal fade" id="deleteModal{{$data->booking_number}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal{{$data->booking_number}}Title" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-danger">
+                                                <h5 class="modal-title text-white" id="deleteModal{{$data->booking_number}}Title"><i class="fa-solid fa-circle-exclamation me-1"></i> Warning</h5>
+                                                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close" style="color:white !important"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to delete this item?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-outline-dark" type="button" data-bs-dismiss="modal">Close</button>
+                                                <form method="POST" action="{{ route('booking.destroy', [$data->id]) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit"><i class="fa-regular fa-trash-can me-1"></i> Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
