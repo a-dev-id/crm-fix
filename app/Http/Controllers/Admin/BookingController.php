@@ -27,7 +27,7 @@ class BookingController extends Controller
     public function create()
     {
         $countries = Country::all();
-        $guests = Guest::where('booking_number', null)->get();
+        $guests = Guest::all();
         $titles = Title::all();
         $villas = Villa::all();
         return view('admin.booking.create')->with(compact('countries', 'guests', 'titles', 'villas'));

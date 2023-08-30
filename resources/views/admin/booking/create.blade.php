@@ -31,8 +31,7 @@
                             <div class="col-lg-6">
                                 <label for="guest_id" class="form-label">Guest name</label>
                                 <div class="input-group mb-3">
-                                    <select class="form-control" id="guest_id" name="guest_id">
-                                        <option>- Choose -</option>
+                                    <select class="selectpicker guest_id form-control" name="guest_id" data-live-search="true">
                                         @foreach ($guests as $data)
                                         <option value="{{$data->id}}">{{$data->title." ".$data->full_name}}</option>
                                         @endforeach
@@ -41,11 +40,6 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <select class="selectpicker" data-live-search="true" data-container="body">
-                                    <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                                </select>
                                 <div class="mb-3">
                                     <label for="booking-number" class="form-label">Booking number</label>
                                     <input class="form-control" id="booking-number" type="number" name="booking_number" />
@@ -110,7 +104,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="campaign-name" class="form-label">Campaign name</label>
-                            <input class="form-control" id="campaign-name" type="number" name="campaign_name" />
+                            <input class="form-control" id="campaign-name" type="text" name="campaign_name" />
                         </div>
                         <div class="mb-3">
                             <label for="campaign-benefit" class="form-label">Campaign benefit</label>

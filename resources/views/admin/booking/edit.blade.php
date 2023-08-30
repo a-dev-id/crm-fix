@@ -1,29 +1,5 @@
 @section('title', 'Edit booking')
 @section('booking_active', 'active')
-
-@push('css')
-<style>
-    .form-control {
-        display: block;
-        width: 100%;
-        padding: 0.875rem 1.125rem;
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1;
-        color: #69707a;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #c5ccd6;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border-radius: 0.35rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-</style>
-@endpush
-
 <x-app-layout>
     <header class="page-header page-header-dark bg-warning pb-10">
         <div class="container-xl px-4">
@@ -44,7 +20,8 @@
         </div>
     </header>
     <div class="container-xl px-4 mt-n10">
-        <form method="POST" action="{{ route('booking.store') }}" class="row" id="formCreate">
+        <form method="POST" action="{{ route('booking.update', $detail->id) }}" class="row" id="formCreate">
+            @method('PUT')
             @csrf
             <div class="col-lg-6">
                 {{-- general card --}}
@@ -128,7 +105,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="campaign-name" class="form-label">Campaign name</label>
-                            <input class="form-control" id="campaign-name" type="number" name="campaign_name" value="{{$detail->campaign_name}}" />
+                            <input class="form-control" id="campaign-name" type="text" name="campaign_name" value="{{$detail->campaign_name}}" />
                         </div>
                         <div class="mb-3">
                             <label for="campaign-benefit" class="form-label">Campaign benefit</label>
