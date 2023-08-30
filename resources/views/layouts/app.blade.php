@@ -71,6 +71,10 @@
                             <div class="nav-link-icon"><i class="fa-solid fa-users"></i></div>
                             Guests
                         </a>
+                        <a class="nav-link @yield('room_active')" href="{{route('room.index')}}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-hotel"></i></div>
+                            Rooms
+                        </a>
                     </div>
                 </div>
                 <div class="sidenav-footer">
@@ -117,6 +121,13 @@
     <script>
         ClassicEditor
             .create( document.querySelector( '#remarks' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#description' ) )
             .catch( error => {
                 console.error( error );
             } );

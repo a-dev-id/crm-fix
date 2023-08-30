@@ -31,7 +31,7 @@
                             <div class="col-lg-6">
                                 <label for="guest_id" class="form-label">Guest name</label>
                                 <div class="input-group mb-3">
-                                    <select class="selectpicker guest_id form-control" name="guest_id" data-live-search="true">
+                                    <select class="selectpicker guest_id form-control" name="guest_id" data-live-search="true" required>
                                         @foreach ($guests as $data)
                                         <option value="{{$data->id}}">{{$data->title." ".$data->full_name}}</option>
                                         @endforeach
@@ -83,7 +83,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="villa-id" class="form-label">Room category</label>
-                            <select class="form-control" id="villa-id" name="villa_id">
+                            <select class="form-control" id="villa-id" name="villa_id" required>
                                 <option>- Choose -</option>
                                 @foreach ($villas as $data)
                                 <option value="{{$data->id}}">{{$data->title}}</option>

@@ -26,7 +26,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('/', DashboardController::class);
     Route::resource('booking', BookingController::class);
     Route::resource('guest', GuestController::class);
-    Route::resource('villa', VillaController::class);
+    Route::resource('room', VillaController::class);
 });
 
 require __DIR__ . '/auth.php';
