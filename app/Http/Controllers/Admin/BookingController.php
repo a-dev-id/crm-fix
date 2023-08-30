@@ -56,7 +56,7 @@ class BookingController extends Controller
         $guest =  Guest::find($request->guest_id);
         $guest->booking_number = $request->booking_number;
         $guest->save();
-        return redirect()->route('booking.index')->with('message', 'New booking created Successfully');
+        return redirect()->route('booking.index')->with('message', 'Booking created Successfully');
     }
 
     /**
@@ -99,7 +99,7 @@ class BookingController extends Controller
         $data->remarks = $request->remarks;
         $data->status = '0';
         $data->save();
-        return redirect()->route('booking.index')->with('message', 'New booking created Successfully');
+        return redirect()->route('booking.index')->with('message', 'Booking updated Successfully');
     }
 
     /**

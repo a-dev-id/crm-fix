@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use App\Models\Guest;
+use App\Models\Title;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -13,7 +15,10 @@ class GuestController extends Controller
      */
     public function index()
     {
-        return view('admin.guest.index');
+        $countries = Country::all();
+        $guests = Guest::all();
+        $titles = Title::all();
+        return view('admin.guest.index')->with(compact('guests', 'titles', 'countries'));
     }
 
     /**
@@ -36,14 +41,9 @@ class GuestController extends Controller
             'phone' => $request->phone,
             'country' => $request->country,
             'birth_date' => $request->birth_date,
-            'identity' => $request->identity,
-            'credit_card' => $request->credit_card,
-            'sign' => $request->sign,
             'booking_number' => $request->booking_number,
-            'booking_date' => $request->booking_date,
         ]);
-        // return redirect()->route('guest.index')->with('message', 'New booking created Successfully');
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Guest created Successfully');
     }
 
     /**
@@ -67,7 +67,15 @@ class GuestController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Guest::find($id);
+        $data->title = $request->title;
+        $data->full_name = $request->full_name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->country = $request->country;
+        $data->birth_date = $request->birth_date;
+        $data->save();
+        return redirect()->back()->with('message', 'Guest updated Successfully');
     }
 
     /**
@@ -75,6 +83,9 @@ class GuestController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Guest::find($id);
+        $data->delete();
+
+        return redirect()->back()->with('message', 'Item deleted Successfully');
     }
 }

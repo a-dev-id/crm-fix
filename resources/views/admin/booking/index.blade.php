@@ -63,15 +63,15 @@
                             </td>
                             <td>
                                 <a href="{{route('booking.edit',[$data->id])}}" class="btn btn-datatable btn-icon btn-transparent-dark me-2"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
-                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->booking_number}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
+                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
 
                                 {{-- Delete Modal --}}
-                                <div class="modal fade" id="deleteModal{{$data->booking_number}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal{{$data->booking_number}}Title" aria-hidden="true">
+                                <div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal{{$data->id}}Title" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header bg-danger">
-                                                <h5 class="modal-title text-white" id="deleteModal{{$data->booking_number}}Title"><i class="fa-solid fa-circle-exclamation me-1"></i> Warning</h5>
-                                                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close" style="color:white !important"></button>
+                                                <h5 class="modal-title text-white" id="deleteModal{{$data->id}}Title"><i class="fa-solid fa-circle-exclamation me-1"></i> Warning</h5>
+                                                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 Are you sure want to delete this item?

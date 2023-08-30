@@ -37,7 +37,7 @@
                                         <option value="{{$data->id}}" @if($data->id == $detail->guest_id) selected @else @endif>{{$data->title." ".$data->full_name}}</option>
                                         @endforeach
                                     </select>
-                                    <button class="input-group-text btn btn-success" id="add-user" type="button" data-bs-toggle="modal" data-bs-target="#addUser"><i class="fa-solid fa-user-plus"></i></button>
+                                    <button class="input-group-text btn btn-success" id="add-user" type="button" data-bs-toggle="modal" data-bs-target="#addGuest"><i class="fa-solid fa-user-plus"></i></button>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -122,15 +122,15 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserTitle" aria-hidden="true">
+    <div class="modal fade" id="addGuest" tabindex="-1" role="dialog" aria-labelledby="addGuestTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addUserTitle">New Guest</h5>
+                    <h5 class="modal-title" id="addGuestTitle">New Guest</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route('guest.store') }}" id="addGuest">
+                    <form method="POST" action="{{ route('guest.store') }}" id="addGuestForm">
                         @csrf
                         <div class="row">
                             <div class="mb-3 col-lg-6">
@@ -174,7 +174,7 @@
                     <button class="btn btn-outline-danger" type="button" data-bs-dismiss="modal">
                         <i class="fa-solid fa-xmark me-1"></i> Cancel
                     </button>
-                    <button class="btn btn-success" type="submit" form="addGuest">
+                    <button class="btn btn-success" type="submit" form="addGuestForm">
                         <i class="fa-regular fa-floppy-disk me-1"></i> Save
                     </button>
                 </div>

@@ -3,9 +3,8 @@
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GuestController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\VillaController;
 use Illuminate\Support\Facades\Route;
-use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +26,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('/', DashboardController::class);
     Route::resource('booking', BookingController::class);
     Route::resource('guest', GuestController::class);
+    Route::resource('villa', VillaController::class);
 });
 
 require __DIR__ . '/auth.php';
