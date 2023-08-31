@@ -1,5 +1,5 @@
-@section('title', 'Rooms')
-@section('room_active', 'active')
+@section('title', 'Experiences')
+@section('experience_active', 'active')
 <x-app-layout>
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
         <div class="container-xl px-4">
@@ -7,12 +7,12 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-person-biking"></i></div>
                             @yield('title')
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
-                        <button type="button" class="btn btn-success text-uppercase fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#addRoom"><i class="fa-solid fa-circle-plus me-1"></i> add new</button>
+                        <button type="button" class="btn btn-success text-uppercase fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#addExperience"><i class="fa-solid fa-circle-plus me-1"></i> add new</button>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($villas as $data)
+                        @foreach ($experiences as $data)
                         <tr>
                             <td><img src="{{asset('storage/'.$data->image)}}" style="width: 100px"></td>
                             <td>{{$data->title}}</td>
@@ -54,7 +54,7 @@
                                 @endif
                             </td>
                             <td>
-                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#editRoom{{$data->id}}"><i class="fa-solid fa-pen-to-square text-warning"></i></button>
+                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#editExperience{{$data->id}}"><i class="fa-solid fa-pen-to-square text-warning"></i></button>
                                 <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
 
                                 {{-- Delete Modal --}}
@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-outline-dark" type="button" data-bs-dismiss="modal">Close</button>
-                                                <form method="POST" action="{{ route('room.destroy', [$data->id]) }}">
+                                                <form method="POST" action="{{ route('experience.destroy', [$data->id]) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit"><i class="fa-regular fa-trash-can me-1"></i> Delete</button>
@@ -81,15 +81,15 @@
                                 </div>
 
                                 {{-- Edit Modal --}}
-                                <div class="modal fade" id="editRoom{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="editRoom{{$data->id}}Title" aria-hidden="true">
+                                <div class="modal fade" id="editExperience{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="editExperience{{$data->id}}Title" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header bg-warning">
-                                                <h5 class="modal-title" id="editRoom{{$data->id}}Title">Edit Guest</h5>
+                                                <h5 class="modal-title" id="editExperience{{$data->id}}Title">Edit Guest</h5>
                                                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="{{ route('room.update', [$data->id]) }}" id="editGuestForm{{$data->id}}" enctype="multipart/form-data">
+                                                <form method="POST" action="{{ route('experience.update', [$data->id]) }}" id="editGuestForm{{$data->id}}" enctype="multipart/form-data">
                                                     @method('PUT')
                                                     @csrf
                                                     <div class="mb-3">
@@ -107,19 +107,23 @@
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="description" class="form-label">Description</label>
-                                                        <textarea class="form-control" id="descriptionRoom{{$data->id}}" name="description" rows="5">
+                                                        <textarea class="form-control" id="descriptionExperience{{$data->id}}" name="description" rows="5">
                                                             {{$data->description}}
                                                         </textarea>
                                                     </div>
                                                     @push('js')
                                                     <script>
                                                         ClassicEditor
-                                                        .create( document.querySelector( '#descriptionRoom{{$data->id}}' ) )
+                                                        .create( document.querySelector( '#descriptionExperience{{$data->id}}' ) )
                                                         .catch( error => {
                                                             console.error( error );
                                                         } );
                                                     </script>
                                                     @endpush
+                                                    <div class="mb-3">
+                                                        <label for="order" class="form-label">Position order</label>
+                                                        <input class="form-control" id="order" type="number" name="order" value="{{$data->order}}" />
+                                                    </div>
                                                     <div class="mb-3">
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" role="switch" id="statusEdit" name="status" value="1" @if ($data->status == '1') checked @else @endif>
@@ -149,15 +153,15 @@
     </div>
 
     <!-- Modal Create-->
-    <div class="modal fade" id="addRoom" tabindex="-1" role="dialog" aria-labelledby="addRoomTitle" aria-hidden="true">
+    <div class="modal fade" id="addExperience" tabindex="-1" role="dialog" aria-labelledby="addExperienceTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addRoomTitle">New Room</h5>
+                    <h5 class="modal-title" id="addExperienceTitle">New Room</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route('room.store') }}" id="addRoomForm" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('experience.store') }}" id="addExperienceForm" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="title" class="form-label">Title</label>
@@ -172,6 +176,10 @@
                             <textarea class="form-control" id="description" name="description" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
+                            <label for="order" class="form-label">Position order</label>
+                            <input class="form-control" id="order" type="number" name="order" />
+                        </div>
+                        <div class="mb-3">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="statusCreate" name="status" value="1" checked>
                                 <label class="form-check-label" for="status">Publish</label>
@@ -183,7 +191,7 @@
                     <button class="btn btn-outline-danger" type="button" data-bs-dismiss="modal">
                         <i class="fa-solid fa-xmark me-1"></i> Cancel
                     </button>
-                    <button class="btn btn-success" type="submit" form="addRoomForm">
+                    <button class="btn btn-success" type="submit" form="addExperienceForm">
                         <i class="fa-regular fa-floppy-disk me-1"></i> Save
                     </button>
                 </div>

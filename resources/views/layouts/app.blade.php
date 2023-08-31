@@ -75,6 +75,10 @@
                             <div class="nav-link-icon"><i class="fa-solid fa-hotel"></i></div>
                             Rooms
                         </a>
+                        <a class="nav-link @yield('experience_active')" href="{{route('experience.index')}}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-person-biking"></i></div>
+                            Experiences
+                        </a>
                     </div>
                 </div>
                 <div class="sidenav-footer">
@@ -111,6 +115,7 @@
     <script src="{{asset('vendors/sb-admin')}}/js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    @stack('js')
     <script>
         ClassicEditor
         .create( document.querySelector( '#campaign-benefit' ) )

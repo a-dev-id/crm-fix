@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\Admin\VillaController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('booking', BookingController::class);
     Route::resource('guest', GuestController::class);
     Route::resource('room', VillaController::class);
+    Route::resource('experience', ExperienceController::class);
 });
 
 require __DIR__ . '/auth.php';
