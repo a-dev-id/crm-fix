@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\Admin\VillaController;
+use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Front
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/{token}', [HomeController::class, 'show'])->name('home.show');
+Route::get('/guests/{id}', [HomeController::class, 'edit'])->name('tamu.edit');
 
 // Admin
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('panel/admin')->group(function () {
     Route::resource('/', DashboardController::class);
     Route::resource('booking', BookingController::class);
     Route::resource('guest', GuestController::class);

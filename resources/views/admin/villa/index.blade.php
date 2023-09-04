@@ -106,8 +106,9 @@
                                                         <img src="{{asset('storage/'.$data->image)}}" style="width: 100px">
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for="description" class="form-label">Description</label>
-                                                        <textarea class="form-control" id="descriptionRoom{{$data->id}}" name="description" rows="5">
+                                                        <label class="form-label">Description</label>
+                                                        <input class="form-control" id="title" type="text" name="description" value="{{$data->description}}" />
+                                                        {{-- <textarea class="form-control" name="description" rows="5">
                                                             {{$data->description}}
                                                         </textarea>
                                                     </div>
@@ -119,7 +120,7 @@
                                                             console.error( error );
                                                         } );
                                                     </script>
-                                                    @endpush
+                                                    @endpush --}}
                                                     <div class="mb-3">
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" role="switch" id="statusEdit" name="status" value="1" @if ($data->status == '1') checked @else @endif>

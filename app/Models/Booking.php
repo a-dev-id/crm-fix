@@ -23,6 +23,7 @@ class Booking extends Model
         'campaign_benefit',
         'remarks',
         'status',
+        'token',
     ];
 
     /**

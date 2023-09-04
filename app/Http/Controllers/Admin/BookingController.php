@@ -9,6 +9,7 @@ use App\Models\Guest;
 use App\Models\Title;
 use App\Models\Villa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BookingController extends Controller
 {
@@ -51,6 +52,7 @@ class BookingController extends Controller
             'campaign_benefit' => $request->campaign_benefit,
             'remarks' => $request->remarks,
             'status' => '0',
+            'token' => Str::random(40),
         ]);
 
         $guest =  Guest::find($request->guest_id);
