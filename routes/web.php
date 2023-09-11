@@ -24,13 +24,18 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Front
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/{token}', [HomeController::class, 'show'])->name('home.show');
-Route::get('/guests/{id}', [HomeController::class, 'edit'])->name('tamu.edit');
+// Route::get('/', [HomeController::class, 'index'])->name('home.index');
+// Route::get('/{token}', [HomeController::class, 'show'])->name('home.show');
+// Route::get('/guests/{id}', [HomeController::class, 'edit'])->name('tamu.edit');
+
+Route::get('/', function () {
+    return redirect()->route('check-in.index');
+});
+Route::resource('/check-in', HomeController::class);
 
 // Admin
 Route::middleware('auth')->prefix('panel/admin')->group(function () {
-    Route::resource('/', DashboardController::class);
+    Route::resource('dashboard', DashboardController::class);
     Route::resource('booking', BookingController::class);
     Route::resource('guest', GuestController::class);
     Route::resource('room', VillaController::class);

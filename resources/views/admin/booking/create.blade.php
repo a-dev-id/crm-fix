@@ -33,7 +33,7 @@
                                 <div class="input-group mb-3">
                                     <select class="selectpicker guest_id form-control" name="guest_id" data-live-search="true" required>
                                         @foreach ($guests as $data)
-                                        <option value="{{$data->id}}">{{$data->title." ".$data->full_name}}</option>
+                                        <option value="{{$data->id}}">{{$data->title." ".$data->first_name." ".$data->last_name}}</option>
                                         @endforeach
                                     </select>
                                     <button class="input-group-text btn btn-success" id="add-user" type="button" data-bs-toggle="modal" data-bs-target="#addGuest"><i class="fa-solid fa-user-plus"></i></button>
@@ -132,7 +132,7 @@
                     <form method="POST" action="{{ route('guest.store') }}" id="addGuestForm">
                         @csrf
                         <div class="row">
-                            <div class="mb-3 col-lg-6">
+                            <div class="mb-3 col-lg-12">
                                 <label for="title" class="form-label">Title</label>
                                 <select class="form-select" id="title" name="title">
                                     <option selected>- Choose -</option>
@@ -142,8 +142,12 @@
                                 </select>
                             </div>
                             <div class="mb-3 col-lg-6">
-                                <label for="full-name" class="form-label">Full name</label>
-                                <input class="form-control" id="full-name" type="text" name="full_name" />
+                                <label for="first-name" class="form-label">First name</label>
+                                <input class="form-control" id="first-name" type="text" name="first_name" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="last-name" class="form-label">Last name</label>
+                                <input class="form-control" id="last-name" type="text" name="last_name" />
                             </div>
                             <div class="mb-3 col-lg-6">
                                 <label for="email" class="form-label">Email</label>

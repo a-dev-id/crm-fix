@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('child')->nullable();
             $table->string('total_charge')->nullable();
             $table->string('campaign_name')->nullable();
-            $table->string('campaign_benefit')->nullable();
+            $table->longText('campaign_benefit')->nullable();
             $table->string('remarks')->nullable();
             $table->string('status')->nullable();
             $table->string('token')->nullable();

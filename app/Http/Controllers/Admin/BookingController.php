@@ -18,8 +18,11 @@ class BookingController extends Controller
      */
     public function index()
     {
+        $guests = Guest::all();
+        $titles = Title::all();
+        $villas = Villa::all();
         $bookings = Booking::all();
-        return view('admin.booking.index')->with(compact('bookings'));
+        return view('admin.booking.index')->with(compact('bookings', 'guests', 'titles', 'villas'));
     }
 
     /**

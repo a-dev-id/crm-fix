@@ -1,14 +1,14 @@
 <x-guest-layout>
     <div class="container px-4 mb-5">
         <div class="row mt-5">
-            <div class="col-12 mt-3">
+            <div class="col-12">
                 <h2 class="text-center mb-4">Room Detail</h2>
                 <div class="card mb-5">
                     <img src="{{asset('storage/'.$result->villa->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="card-text">
                             <h4>{{$result->villa->title}}</h4>
-                            <p style="font-size:12px">{{$result->villa->description}}</p>
+                            <div style="font-size:12px !important">{!! $result->villa->description !!}</div>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 </div>
                 @endfor
                 <div class="mt-5">
-                    <button type="submit" class="btn btn-success" style="width: 100%">CHHECK IN</button>
+                    <button type="submit" class="btn btn-success" style="width: 100%">CHECK IN</button>
                 </div>
 
             </div>

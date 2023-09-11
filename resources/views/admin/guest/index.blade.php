@@ -45,7 +45,7 @@
                     <tbody>
                         @foreach ($guests as $data)
                         <tr>
-                            <td>{{$data->title." ".$data->full_name}}</td>
+                            <td>{{$data->title." ".$data->first_name." ".$data->last_name}}</td>
                             <td>{{$data->email}}</td>
                             <td>{{$data->phone}}</td>
                             <td>{{$data->country}}</td>
@@ -89,7 +89,7 @@
                                                     @method('PUT')
                                                     @csrf
                                                     <div class="row">
-                                                        <div class="mb-3 col-lg-6">
+                                                        <div class="mb-3 col-lg-12">
                                                             <label for="title" class="form-label">Title</label>
                                                             <select class="form-select" id="title" name="title">
                                                                 <option>- Choose -</option>
@@ -99,8 +99,12 @@
                                                             </select>
                                                         </div>
                                                         <div class="mb-3 col-lg-6">
-                                                            <label for="full-name" class="form-label">Full name</label>
-                                                            <input class="form-control" id="full-name" type="text" name="full_name" value="{{$data->full_name}}" />
+                                                            <label for="first-name" class="form-label">First name</label>
+                                                            <input class="form-control" id="first-name" type="text" name="first_name" value="{{$data->first_name}}" />
+                                                        </div>
+                                                        <div class="mb-3 col-lg-6">
+                                                            <label for="last-name" class="form-label">Last name</label>
+                                                            <input class="form-control" id="last-name" type="text" name="last_name" value="{{$data->last_name}}" />
                                                         </div>
                                                         <div class="mb-3 col-lg-6">
                                                             <label for="email" class="form-label">Email</label>
@@ -158,7 +162,7 @@
                     <form method="POST" action="{{ route('guest.store') }}" id="addGuestForm">
                         @csrf
                         <div class="row">
-                            <div class="mb-3 col-lg-6">
+                            <div class="mb-3 col-lg-12">
                                 <label for="title" class="form-label">Title</label>
                                 <select class="form-select" id="title" name="title">
                                     <option selected>- Choose -</option>
@@ -168,8 +172,12 @@
                                 </select>
                             </div>
                             <div class="mb-3 col-lg-6">
-                                <label for="full-name" class="form-label">Full name</label>
-                                <input class="form-control" id="full-name" type="text" name="full_name" />
+                                <label for="first-name" class="form-label">First name</label>
+                                <input class="form-control" id="first-name" type="text" name="first_name" />
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="last-name" class="form-label">Last name</label>
+                                <input class="form-control" id="last-name" type="text" name="last_name" />
                             </div>
                             <div class="mb-3 col-lg-6">
                                 <label for="email" class="form-label">Email</label>

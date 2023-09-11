@@ -36,7 +36,8 @@ class GuestController extends Controller
     {
         Guest::create([
             'title' => $request->title,
-            'full_name' => $request->full_name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'phone' => $request->phone,
             'country' => $request->country,
@@ -69,7 +70,8 @@ class GuestController extends Controller
     {
         $data = Guest::find($id);
         $data->title = $request->title;
-        $data->full_name = $request->full_name;
+        $data->first_name = $request->first_name;
+        $data->last_name = $request->last_name;
         $data->email = $request->email;
         $data->phone = $request->phone;
         $data->country = $request->country;

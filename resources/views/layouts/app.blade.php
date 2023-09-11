@@ -29,7 +29,7 @@
 <body class="nav-fixed">
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
         <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2 text-success" href="{{route('index')}}">A-Dashboard</a>
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2 text-success" href="{{route('dashboard.index')}}">A-Dashboard</a>
         <ul class="navbar-nav align-items-center ms-auto">
             <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                 <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="{{asset('vendors/sb-admin')}}/assets/img/illustrations/profiles/profile-1.png" /></a>
@@ -59,7 +59,7 @@
                 <div class="sidenav-menu">
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="sidenav-menu-heading">General</div>
-                        <a class="nav-link @yield('dashboard_active')" href="{{route('index')}}">
+                        <a class="nav-link @yield('dashboard_active')" href="{{route('dashboard.index')}}">
                             <div class="nav-link-icon"><i class="fa-solid fa-chart-line"></i></div>
                             Dashboard
                         </a>
