@@ -18,6 +18,7 @@ class Booking extends Model
         'villa_id',
         'adult',
         'child',
+        'purpose_stay',
         'total_charge',
         'campaign_name',
         'campaign_benefit',

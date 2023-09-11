@@ -17,7 +17,7 @@
                 <h2 class="text-center mb-4">Guest Detail</h2>
                 <div class="d-grid gap-2">
                     @foreach ($guests as $data)
-                    <a href="{{route('guest-detail.edit', [$data->id, $booking->booking_number])}}" class="btn btn-success btn-lg">
+                    <a href="{{route('guest-detail.edit', $data->id)}}" class="btn btn-success btn-lg">
                         {{$data->title." ".$data->first_name." ".$data->last_name}}
                         @if (empty($data->identity))
                         <i class="fa-solid fa-arrow-right ms-2"></i>

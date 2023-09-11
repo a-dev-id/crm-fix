@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Country;
 use App\Models\Guest;
+use App\Models\Title;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -44,17 +46,32 @@ class HomeController extends Controller
             if ($guest == null) {
                 return redirect()->route('check-in.index')->with('message', 'Invalid Data');
             }
-            return redirect()->route('check-in.edit', [$booking->id]);
+            return redirect()->route('check-in.show', [$booking->booking_number]);
         }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $token)
+    public function show(string $id)
     {
-        $result = Booking::where('token', '=', $token)->first();
-        return view('front.home')->with(compact('result'));
+        $check_booking_number = Booking::where('booking_number', '=', $id)->first();
+
+        if ($check_booking_number == null) {
+            return redirect()->route('check-in.index')->with('message', 'Invalid Data');
+        } else {
+            $titles = Title::all();
+            $countries = Country::all();
+            $booking = Booking::where('booking_number', '=', $id)->first();
+            $adult = Booking::select('adult')->where('id', '=', $booking->id)->first();
+            $child = Booking::select('child')->where('id', '=', $booking->id)->first();
+            $guests = Guest::where('booking_number', '=', $id)->get();
+
+            $guest = Guest::where('booking_number', '=', $id)->count();
+            $total_guest = ($adult->adult + $child->child) - $guest;
+
+            return view('front.guest-detail')->with(compact('booking', 'total_guest', 'titles', 'countries', 'guest', 'guests'));
+        }
     }
 
     /**
@@ -62,11 +79,7 @@ class HomeController extends Controller
      */
     public function edit(string $id)
     {
-        $result = Booking::where('id', '=', $id)->first();
-        $adult = Booking::select('adult')->where('id', '=', $id)->first();
-        $child = Booking::select('child')->where('id', '=', $id)->first();
-        $total_guest = $adult->adult + $child->child;
-        return view('front.guest-input')->with(compact('result', 'total_guest'));
+        //
     }
 
     /**

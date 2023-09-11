@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('villa_id')->nullable();
             $table->string('adult')->nullable();
             $table->string('child')->nullable();
+            $table->string('purpose_stay')->nullable();
             $table->string('total_charge')->nullable();
             $table->string('campaign_name')->nullable();
             $table->longText('campaign_benefit')->nullable();
