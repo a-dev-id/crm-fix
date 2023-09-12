@@ -34,7 +34,7 @@
                         <input type="date" class="form-control" id="arrival" name="arrival" value="{{$result->arrival ?? ''}}" @if(empty($result->arrival)) @else disabled @endif>
                     </div>
                     <div class="mt-5">
-                        <button type="submit" class="btn btn-success" style="width: 100%">NEXT</button>
+                        <button type="submit" class="btn btn-success py-3" style="width: 100%">NEXT <i class="fa-solid fa-arrow-right ms-2"></i></button>
                     </div>
                 </form>
             </div>

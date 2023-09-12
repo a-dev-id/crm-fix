@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('total_charge')->nullable();
             $table->string('campaign_name')->nullable();
             $table->longText('campaign_benefit')->nullable();
-            $table->string('remarks')->nullable();
+            $table->longText('remarks')->nullable();
             $table->string('status')->nullable();
             $table->string('token')->nullable();
             $table->timestamps();

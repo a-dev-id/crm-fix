@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Country;
 use App\Models\Guest;
-use App\Models\Title;
 use Illuminate\Http\Request;
 
-class GuestDetailController extends Controller
+class PassportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,15 +29,23 @@ class GuestDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (!empty($request->file('identity'))) {
+            $identity = $request->file('identity')->store('images/identity', 'public');
+        }
+
+        $data = Guest::create([
+            'identity' => $identity,
+            'booking_number' => $request->booking_number,
+        ]);
+        return redirect()->route('upload-credit-card.edit', $data->id);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $booking_number)
     {
-        //
+        return view('front.upload-passport')->with(compact('booking_number'));
     }
 
     /**
@@ -47,10 +53,7 @@ class GuestDetailController extends Controller
      */
     public function edit(string $id)
     {
-        $titles = Title::all();
-        $countries = Country::all();
-        $guest = Guest::find($id);
-        return view('front.guest-update')->with(compact('titles', 'countries', 'guest'));
+        return view('front.upload-passport')->with(compact('id'));
     }
 
     /**
@@ -58,16 +61,17 @@ class GuestDetailController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        if (empty($request->file('identity'))) {
+            $identity = $request->old_identity;
+        } else {
+            $identity = $request->file('identity')->store('images/identity', 'public');
+        }
+
         $data = Guest::find($id);
-        $data->title = $request->title;
-        $data->first_name = $request->first_name;
-        $data->last_name = $request->last_name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->country = $request->country;
-        $data->birth_date = $request->birth_date;
+        $data->identity = $identity;
         $data->save();
-        return redirect()->route('check-in.show', $data->booking_number);
+
+        return redirect()->route('upload-credit-card.edit', $id);
     }
 
     /**

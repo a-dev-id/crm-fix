@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Country;
 use App\Models\Guest;
-use App\Models\Title;
 use Illuminate\Http\Request;
 
-class GuestDetailController extends Controller
+class CreditCardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,10 +45,7 @@ class GuestDetailController extends Controller
      */
     public function edit(string $id)
     {
-        $titles = Title::all();
-        $countries = Country::all();
-        $guest = Guest::find($id);
-        return view('front.guest-update')->with(compact('titles', 'countries', 'guest'));
+        return view('front.upload-credit-card')->with(compact('id'));
     }
 
     /**
@@ -58,16 +53,17 @@ class GuestDetailController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        if (empty($request->file('credit_card'))) {
+            $credit_card = $request->old_credit_card;
+        } else {
+            $credit_card = $request->file('credit_card')->store('images/credit_card', 'public');
+        }
+
         $data = Guest::find($id);
-        $data->title = $request->title;
-        $data->first_name = $request->first_name;
-        $data->last_name = $request->last_name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->country = $request->country;
-        $data->birth_date = $request->birth_date;
+        $data->credit_card = $credit_card;
         $data->save();
-        return redirect()->route('check-in.show', $data->booking_number);
+
+        return redirect()->route('guest-detail.edit', $id);
     }
 
     /**
