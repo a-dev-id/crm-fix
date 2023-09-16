@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="mb-2">
                                 <div class="card border-0">
-                                    <img src="{{asset('images/passport.png')}}" class="card-img-top m-auto" style="width: 200px">
+                                    <img src="{{asset('images/visa.png')}}" class="card-img-top m-auto" style="width: 200px">
                                     <div class="card-body">
                                         <div class="card-text mt-3">
                                             Few pointers totake note:

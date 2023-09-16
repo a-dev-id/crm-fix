@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\CheckIn;
 use App\Models\Country;
 use App\Models\Guest;
 use App\Models\Title;
@@ -70,7 +71,9 @@ class HomeController extends Controller
             $guest = Guest::where('booking_number', '=', $id)->count();
             $total_guest = ($adult->adult + $child->child) - $guest;
 
-            return view('front.guest-detail')->with(compact('booking', 'total_guest', 'titles', 'countries', 'guest', 'guests'));
+            $check_in_status = CheckIn::where('booking_number', '=', $id)->first();
+
+            return view('front.guest-detail')->with(compact('booking', 'total_guest', 'titles', 'countries', 'guest', 'guests', 'check_in_status'));
         }
     }
 

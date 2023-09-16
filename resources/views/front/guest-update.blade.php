@@ -47,20 +47,20 @@
                         </div>
                         <div class="mb-3 col-lg-6">
                             <div class="card">
-                                <div class="card-header fw-bold">
+                                <img src="{{asset('storage/'.$guest->identity)}}" class="card-img-top">
+                                <div class="card-footer fw-bold">
                                     Passport
                                 </div>
-                                <img src="{{asset('storage/'.$guest->identity)}}" class="card-img-top">
                             </div>
                         </div>
-                        <div class="mb-3 col-lg-6">
+                        {{-- <div class="mb-3 col-lg-6">
                             <div class="card">
                                 <div class="card-header fw-bold">
                                     Credit Card
                                 </div>
                                 <img src="{{asset('storage/'.$guest->credit_card)}}" class="card-img-top">
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="mt-4">
                             <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%">SAVE <i class="fa-regular fa-floppy-disk ms-2"></i></button>
                         </div>

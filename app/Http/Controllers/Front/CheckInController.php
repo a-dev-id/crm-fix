@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Guest;
+use App\Models\CheckIn;
 use Illuminate\Http\Request;
 
-class PassportController extends Controller
+class CheckInController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,23 +29,19 @@ class PassportController extends Controller
      */
     public function store(Request $request)
     {
-        if (!empty($request->file('identity'))) {
-            $identity = $request->file('identity')->store('images/identity', 'public');
-        }
-
-        $data = Guest::create([
-            'identity' => $identity,
+        CheckIn::create([
             'booking_number' => $request->booking_number,
+            'check_in_status' => '1',
         ]);
-        return redirect()->route('upload-credit-card.edit', $data->id);
+        return redirect()->route('thank-you.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $booking_number)
+    public function show(string $id)
     {
-        return view('front.upload-passport')->with(compact('booking_number'));
+        //
     }
 
     /**
@@ -53,7 +49,7 @@ class PassportController extends Controller
      */
     public function edit(string $id)
     {
-        return view('front.upload-passport')->with(compact('id'));
+        //
     }
 
     /**
@@ -61,18 +57,7 @@ class PassportController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        if (empty($request->file('identity'))) {
-            $identity = $request->old_identity;
-        } else {
-            $identity = $request->file('identity')->store('images/identity', 'public');
-        }
-
-        $data = Guest::find($id);
-        $data->identity = $identity;
-        $data->save();
-
-        // return redirect()->route('upload-credit-card.edit', $id);
-        return redirect()->route('guest-detail.edit', $id);
+        //
     }
 
     /**

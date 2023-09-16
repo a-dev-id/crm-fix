@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\Admin\VillaController;
+use App\Http\Controllers\Front\CheckInController;
 use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
 use App\Http\Controllers\Front\HomeController;
@@ -38,6 +39,7 @@ Route::resource('/check-in', HomeController::class);
 Route::resource('/check-in/guest-detail', GuestDetailController::class);
 Route::resource('/check-in/upload-passport', PassportController::class);
 Route::resource('/check-in/upload-credit-card', CreditCardController::class);
+Route::resource('/check-in/checkin', CheckInController::class);
 
 // Admin
 Route::middleware('auth')->prefix('panel/admin')->group(function () {
