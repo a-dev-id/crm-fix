@@ -1,7 +1,10 @@
+@section('navigation')
+<a class="navbar-brand text-white" href="{{url()->previous()}}"><i class="fa-solid fa-arrow-left me-2"></i> Back</a>
+@endsection
 <x-guest-layout>
     <div class="container px-4 mb-5">
-        <div class="row mt-5">
-            <div class="col-12">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-6">
                 <h2 class="text-center mb-4">Room Detail</h2>
                 <div class="card mb-5">
                     <img src="{{asset('storage/'.$booking->villa->image)}}" class="card-img-top" alt="...">
@@ -9,13 +12,17 @@
                         <div class="card-text">
                             <h4>{{$booking->villa->title}}</h4>
                             <div style="font-size:12px !important">{!! $booking->villa->description !!}</div>
+                            <div class="fw-bold"><i class="fa-regular fa-calendar-days"></i> Check-in date: {{date('M d, Y', strtotime($booking->arrival));}}</div>
+                            <div class="fw-bold"><i class="fa-regular fa-calendar-days"></i> Check-out date: {{date('M d, Y', strtotime($booking->departure));}}</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-6">
                 <h2 class="text-center mb-3">Guest Detail</h2>
-                <div class="px-2">
+                <div class="px-2 text-center">
                     <small style="font-size:12px">Please verify the details of each guest(s) below to proceed with check-in</small>
                 </div>
                 <div class="d-grid gap-3 mt-4 mb-5">
@@ -32,7 +39,7 @@
                         <i class="fa-solid fa-arrow-right ms-2"></i>
                     </a> --}}
                     @else
-                    <a href="{{route('upload-passport.edit', $data->id)}}" class="btn btn-outline-success btn-lg py-3 @if($check_in_status->check_in_status=='1' )  disabled" role="button" aria-disabled="true" @else " @endif>
+                    <a href="{{route('upload-passport.edit', $data->id)}}" class="btn btn-outline-success btn-lg py-3 @if($check_in_status == null ) disabled" role="button" aria-disabled="true" @else " @endif>
                         {{$data->title." ".$data->first_name." ".$data->last_name}}
                         <i class=" fa-regular fa-circle-check ms-2"></i>
                     </a>
@@ -45,7 +52,7 @@
                     <form method="POST" action="{{ route('checkin.store', [$data->id]) }}">
                         @csrf
                         <input type="hidden" name="booking_number" value="{{$booking->booking_number}}">
-                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($check_in_status->check_in_status=='1' ) disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
+                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($check_in_status==null ) disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
                     </form>
                     @else
                     <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" disabled>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>

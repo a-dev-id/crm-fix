@@ -1,3 +1,6 @@
+@section('navigation')
+<a class="navbar-brand text-white" href="{{url()->previous()}}"><i class="fa-solid fa-arrow-left me-2"></i> Back</a>
+@endsection
 <x-guest-layout>
     <div class="container px-4 mb-5">
         <div class="row mt-5">

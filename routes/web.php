@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\PassportController;
+use App\Http\Controllers\Front\ThankYouController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,7 @@ Route::resource('/check-in/guest-detail', GuestDetailController::class);
 Route::resource('/check-in/upload-passport', PassportController::class);
 Route::resource('/check-in/upload-credit-card', CreditCardController::class);
 Route::resource('/check-in/checkin', CheckInController::class);
+Route::resource('/check-in/complete/thank-you', ThankYouController::class);
 
 // Admin
 Route::middleware('auth')->prefix('panel/admin')->group(function () {

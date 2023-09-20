@@ -71,7 +71,11 @@ class HomeController extends Controller
             $guest = Guest::where('booking_number', '=', $id)->count();
             $total_guest = ($adult->adult + $child->child) - $guest;
 
-            $check_in_status = CheckIn::where('booking_number', '=', $id)->first();
+            if (CheckIn::where('booking_number', '=', $id)->count() > 0) {
+                $check_in_status = null;
+            } else {
+                $check_in_status = '1';
+            }
 
             return view('front.guest-detail')->with(compact('booking', 'total_guest', 'titles', 'countries', 'guest', 'guests', 'check_in_status'));
         }

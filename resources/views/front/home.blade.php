@@ -1,3 +1,6 @@
+@section('navigation')
+<a class="navbar-brand text-white" href="{{url('/')}}"><i class="fa-solid fa-house ms-3"></i></a>
+@endsection
 @push('js')
 <script>
     setTimeout(() => {
@@ -8,7 +11,7 @@
 @endpush
 <x-guest-layout>
     <div class="container px-4">
-        <div class="row mt-5">
+        <div class="row mt-5 justify-content-center">
             @if (session('message'))
             <div class="col-12 mt-3">
                 <div class="alert alert-danger" role="alert" id="alert">
@@ -17,7 +20,7 @@
             </div>
             @endif
 
-            <div class="col-12 mt-3">
+            <div class="col-12 col-md-6 mt-3">
                 <h2 class="text-center">Enter Reservation Details</h2>
                 <form class="mt-4" action="{{route('check-in.store')}}" method="POST">
                     @csrf

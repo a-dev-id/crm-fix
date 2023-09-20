@@ -1,7 +1,10 @@
+@section('navigation')
+<a class="navbar-brand text-white" href="{{url()->previous()}}"><i class="fa-solid fa-arrow-left me-2"></i> Back</a>
+@endsection
 <x-guest-layout>
     <div class="container px-4 mb-5">
-        <div class="row mt-5">
-            <div class="col-12">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-6">
                 <h2 class="text-center mb-5">Submit Passport image</h2>
                 @if (empty($id))
                 <form method="POST" action="{{ route('upload-passport.store') }}" enctype="multipart/form-data">

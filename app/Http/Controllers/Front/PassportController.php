@@ -37,7 +37,8 @@ class PassportController extends Controller
             'identity' => $identity,
             'booking_number' => $request->booking_number,
         ]);
-        return redirect()->route('upload-credit-card.edit', $data->id);
+        // return redirect()->route('upload-credit-card.edit', $data->id);
+        return redirect()->route('guest-detail.edit', $data->id);
     }
 
     /**

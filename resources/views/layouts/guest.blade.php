@@ -13,8 +13,8 @@
 
 <body>
     <nav class="navbar bg-dark">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand text-white" href="#"><i class="fa-solid fa-house ms-3"></i></a>
+        <div class="container-fluid container-md d-flex justify-content-between">
+            @yield('navigation')
             <img src="https://elevatebali.com/images/logo.png" style="width: 140px; filter: grayscale(1);">
             <div class="text-dark">hehehe</div>
         </div>
