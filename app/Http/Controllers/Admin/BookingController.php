@@ -70,7 +70,12 @@ class BookingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $detail = Booking::find($id);
+        $guests = Guest::where('booking_number', '=', $detail->booking_number)->get();
+        $villas = Villa::all();
+        $titles = Title::all();
+        $countries = Country::all();
+        return view('admin.booking.show')->with(compact('detail', 'guests', 'villas', 'titles', 'countries'));
     }
 
     /**
@@ -103,7 +108,7 @@ class BookingController extends Controller
         $data->campaign_name = $request->campaign_name;
         $data->campaign_benefit = $request->campaign_benefit;
         $data->remarks = $request->remarks;
-        $data->status = '0';
+        $data->confirmation_letter_status = '0';
         $data->save();
         return redirect()->route('booking.index')->with('message', 'Booking updated Successfully');
     }

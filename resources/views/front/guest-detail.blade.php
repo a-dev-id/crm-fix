@@ -11,9 +11,9 @@
                     <div class="card-body">
                         <div class="card-text">
                             <h4>{{$booking->villa->title}}</h4>
-                            <div style="font-size:12px !important">{!! $booking->villa->description !!}</div>
-                            <div class="fw-bold"><i class="fa-regular fa-calendar-days"></i> Check-in date: {{date('M d, Y', strtotime($booking->arrival));}}</div>
-                            <div class="fw-bold"><i class="fa-regular fa-calendar-days"></i> Check-out date: {{date('M d, Y', strtotime($booking->departure));}}</div>
+                            <div style="font-size:12px !important" class="mb-3">{!! $booking->villa->description !!}</div>
+                            <div><i class="fa-regular fa-calendar"></i> Check-in date: <span class="fw-bold">{{date('M d, Y', strtotime($booking->arrival));}}</span></div>
+                            <div><i class="fa-regular fa-calendar"></i> Check-out date: <span class="fw-bold">{{date('M d, Y', strtotime($booking->departure));}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -48,11 +48,14 @@
                     @for ($i = 0; $i < $total_guest; $i++) <a href="{{route('upload-passport.show',$booking->booking_number)}}" class="btn btn-outline-success btn-lg py-3">Add Guest <i class="fa-solid fa-user-plus ms-2"></i></a> @endfor
                 </div>
                 <div class="mt-5">
+
+                    {{$check_in_status}}
+
                     @if ($total_guest == '0')
                     <form method="POST" action="{{ route('checkin.update', [$booking->id]) }}">
                         @method('PUT')
                         @csrf
-                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($check_in_status==null ) disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
+                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($check_in_status=='1' ) disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
                     </form>
                     @else
                     <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" disabled>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>

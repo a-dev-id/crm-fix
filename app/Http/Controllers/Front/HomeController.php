@@ -71,7 +71,7 @@ class HomeController extends Controller
             $guest = Guest::where('booking_number', '=', $id)->count();
             $total_guest = ($adult->adult + $child->child) - $guest;
 
-            if (CheckIn::where('booking_number', '=', $id)->count() > 0) {
+            if (Guest::where('booking_number', '=', $id)->count() > 0) {
                 $check_in_status = null;
             } else {
                 $check_in_status = '1';
