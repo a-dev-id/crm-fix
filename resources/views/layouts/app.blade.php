@@ -14,6 +14,7 @@
     <link href="{{asset('vendors/sb-admin')}}/css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="{{asset('vendors/sb-admin')}}/assets/img/favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
 
     <style>
@@ -115,6 +116,7 @@
     <script src="{{asset('vendors/sb-admin')}}/js/datatables/datatables-simple-demo.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     @stack('js')
     <script>
         ClassicEditor

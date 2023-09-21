@@ -25,7 +25,9 @@ return new class extends Migration
             $table->string('campaign_name')->nullable();
             $table->longText('campaign_benefit')->nullable();
             $table->longText('remarks')->nullable();
-            $table->string('status')->nullable();
+            $table->string('confirmation_letter_status')->nullable();
+            $table->string('check_in_status')->nullable();
+            $table->string('pre_arrival_status')->nullable();
             $table->string('token')->nullable();
             $table->timestamps();
         });

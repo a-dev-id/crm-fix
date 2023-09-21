@@ -7,7 +7,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-hotel"></i></div>
                             @yield('title')
                         </h1>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\CheckIn;
 use Illuminate\Http\Request;
 
@@ -29,11 +30,7 @@ class CheckInController extends Controller
      */
     public function store(Request $request)
     {
-        CheckIn::create([
-            'booking_number' => $request->booking_number,
-            'check_in_status' => '1',
-        ]);
-        return redirect()->route('thank-you.index');
+        //
     }
 
     /**
@@ -57,7 +54,10 @@ class CheckInController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Booking::find($id);
+        $data->check_in_status = '1';
+        $data->save();
+        return redirect()->route('thank-you.index');
     }
 
     /**

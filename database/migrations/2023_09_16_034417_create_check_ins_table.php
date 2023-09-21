@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('check_ins', function (Blueprint $table) {
             $table->id();
             $table->string('booking_number')->nullable();
+            $table->string('status')->nullable();
             $table->string('check_in_status')->nullable();
             $table->string('pre_arrival_status')->nullable();
             $table->string('check_out_status')->nullable();

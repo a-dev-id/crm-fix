@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\CheckIn;
 use App\Models\Country;
 use App\Models\Guest;
 use App\Models\Title;
@@ -31,7 +32,7 @@ class BookingController extends Controller
     public function create()
     {
         $countries = Country::all();
-        $guests = Guest::all();
+        $guests = Guest::where('booking_number', '=', null)->get();
         $titles = Title::all();
         $villas = Villa::all();
         return view('admin.booking.create')->with(compact('countries', 'guests', 'titles', 'villas'));
@@ -54,7 +55,7 @@ class BookingController extends Controller
             'campaign_name' => $request->campaign_name,
             'campaign_benefit' => $request->campaign_benefit,
             'remarks' => $request->remarks,
-            'status' => '0',
+            'confirmation_letter_status' => '0',
             'token' => Str::random(40),
         ]);
 

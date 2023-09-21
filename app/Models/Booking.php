@@ -23,7 +23,9 @@ class Booking extends Model
         'campaign_name',
         'campaign_benefit',
         'remarks',
-        'status',
+        'confirmation_letter_status',
+        'check_in_status',
+        'pre_arrival_status',
         'token',
     ];
 

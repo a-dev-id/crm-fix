@@ -15,7 +15,7 @@
                             <select class="form-select" id="title" name="title">
                                 <option>- Choose -</option>
                                 @foreach ($titles as $data)
-                                <option value="{{$data->value}}" @if($data->title == $guest->title) selected @else @endif>{{$data->title}}</option>
+                                <option value="{{$data->name}}" @if($data->name == $guest->title) selected @else @endif>{{$data->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -40,7 +40,7 @@
                             <select class="form-select" id="country" name="country">
                                 <option selected>- Choose -</option>
                                 @foreach ($countries as $data)
-                                <option value="{{$data->value}}" @if($data->value == $guest->country) selected @else @endif>{{$data->title}}</option>
+                                <option value="{{$data->name}}" @if($data->name == $guest->country) selected @else @endif>{{$data->name}}</option>
                                 @endforeach
                             </select>
                         </div>

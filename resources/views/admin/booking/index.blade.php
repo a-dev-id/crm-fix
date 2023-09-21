@@ -55,7 +55,7 @@
                             <td>{{$data->departure}}</td>
                             <td>{{$data->villa->title}}</td>
                             <td>
-                                @if ($data->status == '0')
+                                @if ($data->confirmation_letter_status == '0')
                                 <div class="badge bg-warning rounded-pill"><i class="fa-solid fa-clock"></i> On progress</div>
                                 @else
                                 <div class="badge bg-success rounded-pill"><i class="fa-solid fa-circle-check"></i> Success</div>

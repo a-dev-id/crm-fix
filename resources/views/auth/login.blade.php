@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-success">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
@@ -23,7 +23,7 @@
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="fw-bold my-4 text-center">Login</h3>
+                                    <h3 class="fw-bold my-4 text-center text-success">Login | A-Dashboard</h3>
                                 </div>
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('login') }}">
@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <div>&nbsp;</div>
-                                            <button type="submit" class="btn btn-primary" href="dashboard-1.html">Login</button>
+                                            <button type="submit" class="btn btn-success"><i class="fa-solid fa-right-to-bracket me-2"></i> Login</button>
                                         </div>
                                     </form>
                                 </div>

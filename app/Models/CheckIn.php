@@ -11,6 +11,7 @@ class CheckIn extends Model
 
     protected $fillable = [
         'booking_number',
+        'status',
         'check_in_status',
         'pre_arrival_status',
         'check_out_status',

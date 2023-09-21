@@ -49,9 +49,9 @@
                 </div>
                 <div class="mt-5">
                     @if ($total_guest == '0')
-                    <form method="POST" action="{{ route('checkin.store', [$data->id]) }}">
+                    <form method="POST" action="{{ route('checkin.update', [$booking->id]) }}">
+                        @method('PUT')
                         @csrf
-                        <input type="hidden" name="booking_number" value="{{$booking->booking_number}}">
                         <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($check_in_status==null ) disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
                     </form>
                     @else

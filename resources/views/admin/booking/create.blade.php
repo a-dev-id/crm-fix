@@ -137,7 +137,7 @@
                                 <select class="form-select" id="title" name="title">
                                     <option selected>- Choose -</option>
                                     @foreach ($titles as $data)
-                                    <option value="{{$data->value}}">{{$data->title}}</option>
+                                    <option value="{{$data->name}}">{{$data->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -162,7 +162,7 @@
                                 <select class="form-select" id="country" name="country">
                                     <option selected>- Choose -</option>
                                     @foreach ($countries as $data)
-                                    <option value="{{$data->value}}">{{$data->title}}</option>
+                                    <option value="{{$data->name}}">{{$data->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
