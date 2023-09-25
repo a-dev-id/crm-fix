@@ -44,16 +44,16 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-5 col-6">
+                        <div class="mb-3 col-6">
                             <label for="birth-date" class="form-label fw-bold">Birth date</label>
                             <input class="form-control" id="birth-date" type="date" name="birth_date" value="{{$guest->birth_date}}" />
                         </div>
-                        <div class="mb-3 col-6">
+                        <div class="mb-3 col-12">
                             <div class="card">
-                                <img src="{{asset('storage/'.$guest->identity)}}" class="card-img-top">
-                                <div class="card-footer fw-bold">
+                                <div class="card-body fw-bold">
                                     Passport
                                 </div>
+                                <img src="{{asset('storage/'.$guest->identity)}}" class="card-img-top">
                             </div>
                         </div>
                         {{-- <div class="mb-3 col-lg-6">

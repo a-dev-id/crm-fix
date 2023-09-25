@@ -5,6 +5,8 @@ namespace App\Http\Controllers\CronJob;
 use App\Http\Controllers\Controller;
 use App\Mail\ConfirmationLetter;
 use App\Models\Booking;
+use App\Models\Guest;
+use App\Models\Villa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,9 +18,27 @@ class ConfirmationLetterController extends Controller
     public function index()
     {
         $booking = Booking::where('confirmation_letter_status', '=', '0')->first();
+        // $villa = Villa::where('id', '=', $booking->villa->villa_id)->where('status', '=', '1')->first();
+
         $mailData = [
-            'title' => 'Mail from ItSolutionStuff.com',
-            'body' => 'This is for testing email using smtp.'
+            // general
+            'booking_number' => $booking->booking_number,
+            'arrival' => $booking->arrival,
+            'departure' => $booking->departure,
+            'adult' => $booking->adult,
+            'child' => $booking->child,
+            'total_charge' => $booking->total_charge,
+            'campaign_name' => $booking->campaign_name,
+            'campaign_benefit' => $booking->campaign_benefit,
+            'remarks' => $booking->remarks,
+
+            // villa
+            'villa_title' => $booking->villa->title,
+            'villa_description' => $booking->villa->description,
+            'villa_image' => $booking->villa->image,
+
+            // guest
+            'guest_full_name' => $booking->guest->title . " " . $booking->guest->first_name . " " . $booking->guest->last_name,
         ];
 
         Mail::to($booking->guest->email)

@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <input name="identity" type="file" class="form-control border border-success" required>
+                                <input name="identity" type="file" class="form-control border border-success" required accept="image/*">
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%">NEXT <i class="fa-solid fa-arrow-right ms-2"></i></button>
