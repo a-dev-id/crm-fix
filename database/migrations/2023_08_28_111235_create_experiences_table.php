@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
+            $table->string('price')->nullable();
+            $table->string('note')->nullable();
+            $table->string('button_label')->nullable();
+            $table->string('button_link')->nullable();
             $table->string('image')->nullable();
             $table->string('order')->nullable();
             $table->integer('status')->nullable();

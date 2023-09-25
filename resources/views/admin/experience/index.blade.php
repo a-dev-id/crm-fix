@@ -12,7 +12,7 @@
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
-                        <button type="button" class="btn btn-success text-uppercase fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#addExperience"><i class="fa-solid fa-circle-plus me-1"></i> add new</button>
+                        <a href="{{route('experience.create')}}" class="btn btn-success text-uppercase fw-bold shadow-lg"><i class="fa-solid fa-circle-plus me-1"></i> add new</a>
                     </div>
                 </div>
             </div>

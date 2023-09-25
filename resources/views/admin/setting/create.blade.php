@@ -7,7 +7,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-gears"></i></div>
                             @yield('title')
                         </h1>
                     </div>
@@ -20,7 +20,7 @@
         </div>
     </header>
     <div class="container-xl px-4 mt-n10">
-        <form method="POST" action="{{ route('setting.store') }}" class="row justify-content-center" id="formCreate">
+        <form method="POST" action="{{ route('setting.store') }}" class="row justify-content-center" id="formCreate" enctype="multipart/form-data">
             @csrf
             <div class="col-lg-8">
                 {{-- general card --}}
@@ -31,7 +31,7 @@
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>
-                                    <input class="form-control" id="title" type="number" name="title" />
+                                    <input class="form-control" id="title" type="text" name="title" />
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -49,7 +49,15 @@
                             <div class="col-lg-12">
                                 <div class="mb-3">
                                     <label for="description" class="form-label">Description</label>
-                                    <textarea name="" rows="5" class="form-control" id="description"></textarea>
+                                    <textarea name="description" rows="5" class="form-control" id="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="statusCreate" name="status" value="1" checked>
+                                        <label class="form-check-label" for="status">Publish</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>

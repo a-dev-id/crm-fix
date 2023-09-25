@@ -7,7 +7,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i class="fa-solid fa-hotel"></i></div>
+                            <div class="page-header-icon"><i class="fa-solid fa-gears"></i></div>
                             @yield('title')
                         </h1>
                     </div>
@@ -35,6 +35,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Image</th>
                             <th>Title</th>
                             <th>Status</th>
@@ -44,7 +45,12 @@
                     <tbody>
                         @foreach ($settings as $data)
                         <tr>
-                            <td><img src="{{asset('storage/'.$data->image)}}" style="width: 100px"></td>
+                            <td>{{$data->id}}</td>
+                            <td>
+                                @if (!$data->image == null)
+                                <img src="{{asset('storage/'.$data->image)}}" style="width: 100px">
+                                @endif
+                            </td>
                             <td>{{$data->title}}</td>
                             <td>
                                 @if ($data->status == '1')
@@ -54,7 +60,7 @@
                                 @endif
                             </td>
                             <td>
-                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#editRoom{{$data->id}}"><i class="fa-solid fa-pen-to-square text-warning"></i></button>
+                                <a href="{{route('setting.edit', $data->id)}}" class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
                                 <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
 
                                 {{-- Delete Modal --}}
@@ -70,7 +76,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-outline-dark" type="button" data-bs-dismiss="modal">Close</button>
-                                                <form method="POST" action="{{ route('room.destroy', [$data->id]) }}">
+                                                <form method="POST" action="{{ route('setting.destroy', [$data->id]) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-danger" type="submit"><i class="fa-regular fa-trash-can me-1"></i> Delete</button>

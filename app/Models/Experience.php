@@ -12,6 +12,10 @@ class Experience extends Model
     protected $fillable = [
         'title',
         'description',
+        'price',
+        'note',
+        'button_label',
+        'button_link',
         'image',
         'order',
         'status',
