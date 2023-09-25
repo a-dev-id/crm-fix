@@ -39,11 +39,15 @@ class ExperienceController extends Controller
         Experience::create([
             'title' => $request->title,
             'description' => $request->description,
+            'price' => $request->price,
+            'note' => $request->note,
+            'button_label' => $request->button_label,
+            'button_link' => $request->button_link,
             'image' => $image,
             'order' => $request->order,
             'status' => $request->status,
         ]);
-        return redirect()->back()->with('message', 'Room created Successfully');
+        return redirect()->route('experience.index')->with('message', 'Room created Successfully');
     }
 
     /**
@@ -59,7 +63,8 @@ class ExperienceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $detail = Experience::find($id);
+        return view('admin.experience.edit')->with(compact('detail'));
     }
 
     /**
@@ -75,11 +80,15 @@ class ExperienceController extends Controller
         $data = Experience::find($id);
         $data->title = $request->title;
         $data->description = $request->description;
+        $data->price = $request->price;
+        $data->note = $request->note;
+        $data->button_label = $request->button_label;
+        $data->button_link = $request->button_link;
         $data->image = $image;
         $data->order = $request->order;
         $data->status = $request->status;
         $data->save();
-        return redirect()->back()->with('message', 'Room updated Successfully');
+        return redirect()->route('experience.index')->with('message', 'Room updated Successfully');
     }
 
     /**
@@ -90,6 +99,6 @@ class ExperienceController extends Controller
         $data = Experience::find($id);
         $data->delete();
 
-        return redirect()->back()->with('message', 'Item deleted Successfully');
+        return redirect()->route('experience.index')->with('message', 'Item deleted Successfully');
     }
 }

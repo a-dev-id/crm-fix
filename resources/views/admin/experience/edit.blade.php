@@ -48,10 +48,10 @@
                             <label for="button_link" class="form-label">Button link</label>
                             <input class="form-control" id="button_link" type="text" name="button_link" value="{{$detail->button_link}}" />
                         </div>
-                        <label for="image" class="form-label">Image</label>
                         <div class="mb-3">
-                            <input type="file" class="form-control" id="image" name="image">
-                            <input type="hidden" name="old_image" value="{{$detail->old_image}}">
+                            <label for="image" class="form-label">Image</label>
+                            <input class="form-control" id="image" type="file" name="image" />
+                            <input type="hidden" name="old_image" value="{{$detail->image}}" />
                         </div>
                         @if (!$detail->image == null)
                         <div class="col-lg-12">
@@ -62,11 +62,11 @@
                         @endif
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="5">{{$detail->description}}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="order" class="form-label">Position order</label>
-                            <input class="form-control" id="order" type="number" name="order" />
+                            <input class="form-control" id="order" type="number" name="order" value="{{$detail->order}}" />
                         </div>
                         <div class="mb-3">
                             <div class="form-check form-switch">
