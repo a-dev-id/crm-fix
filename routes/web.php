@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\GuestController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\CronJob\ConfirmationLetterController;
 use App\Http\Controllers\Front\CheckInController;
@@ -54,6 +55,7 @@ Route::middleware('auth')->prefix('panel/admin')->group(function () {
     Route::resource('guest', GuestController::class);
     Route::resource('room', VillaController::class);
     Route::resource('experience', ExperienceController::class);
+    Route::resource('setting', SettingController::class);
 });
 
 require __DIR__ . '/auth.php';

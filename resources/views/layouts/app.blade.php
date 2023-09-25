@@ -80,6 +80,10 @@
                             <div class="nav-link-icon"><i class="fa-solid fa-person-biking"></i></div>
                             Experiences
                         </a>
+                        <a class="nav-link @yield('setting_active')" href="{{route('setting.index')}}">
+                            <div class="nav-link-icon"><i class="fa-solid fa-gears"></i></div>
+                            Settings
+                        </a>
                     </div>
                 </div>
                 <div class="sidenav-footer">
