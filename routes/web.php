@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\CronJob\ConfirmationLetterController;
+use App\Http\Controllers\CronJob\PostStayLetterController;
+use App\Http\Controllers\CronJob\PreArrivalLetterController;
 use App\Http\Controllers\Front\CheckInController;
 use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
@@ -47,6 +49,8 @@ Route::resource('/check-in/complete/thank-you', ThankYouController::class);
 
 // CronJob
 Route::resource('/cron-job/confirmation-letter', ConfirmationLetterController::class);
+Route::resource('/cron-job/pre-arrival-letter', PreArrivalLetterController::class);
+Route::resource('/cron-job/post-stay-letter', PostStayLetterController::class);
 
 // Admin
 Route::middleware('auth')->prefix('panel/admin')->group(function () {

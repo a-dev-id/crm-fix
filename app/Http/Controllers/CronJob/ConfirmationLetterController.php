@@ -18,13 +18,9 @@ class ConfirmationLetterController extends Controller
      */
     public function index()
     {
-        $booking = Booking::where('confirmation_letter_status', '=', '0')->first();
-        $banner = Setting::where('id', '1')->first();
-        $logo = Setting::where('id', '2')->first();
-        // $villa = Villa::where('id', '=', $booking->villa->villa_id)->where('status', '=', '1')->first();
+        $booking = Booking::where('check_in_status', '1')->where('confirmation_letter_status', '0')->first();
 
         $mailData = [
-            // general
             'booking_number' => $booking->booking_number,
             'arrival' => $booking->arrival,
             'departure' => $booking->departure,
@@ -34,18 +30,10 @@ class ConfirmationLetterController extends Controller
             'campaign_name' => $booking->campaign_name,
             'campaign_benefit' => $booking->campaign_benefit,
             'remarks' => $booking->remarks,
-
-            // villa
             'villa_title' => $booking->villa->title,
             'villa_description' => $booking->villa->description,
             'villa_image' => $booking->villa->image,
-
-            // guest
             'guest_full_name' => $booking->guest->title . " " . $booking->guest->first_name . " " . $booking->guest->last_name,
-
-            // confirmation letter
-            'banner' => $banner->image,
-            'logo' => $logo->image,
         ];
 
         Mail::to($booking->guest->email)

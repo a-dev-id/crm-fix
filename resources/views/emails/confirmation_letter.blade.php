@@ -46,12 +46,7 @@
         }
 
         @media (max-width:768px) {
-
-            .desktop_hide table.icons-inner,
-            .row-10 .column-1 .block-4.button_block .alignment a,
-            .row-10 .column-1 .block-4.button_block .alignment div,
-            .row-11 .column-2 .block-4.button_block .alignment a,
-            .row-11 .column-2 .block-4.button_block .alignment div {
+            .desktop_hide table.icons-inner {
                 display: inline-block !important;
             }
 
@@ -123,22 +118,6 @@
                 border-left: 0;
             }
 
-            .row-10 td.column.first .border {
-                padding: 35px 20px 20px;
-                border-top: 0;
-                border-right: 0px;
-                border-bottom: 0;
-                border-left: 0;
-            }
-
-            .row-10 td.column.last .border {
-                padding: 35px 20px 20px 0;
-                border-top: 0;
-                border-right: 0px;
-                border-bottom: 0;
-                border-left: 0;
-            }
-
             .row-1 .column-2 .block-1.image_block td.pad {
                 padding: 25px !important;
             }
@@ -150,53 +129,38 @@
                 font-size: 13px !important;
             }
 
-            .row-5 .column-1 .block-1.heading_block td.pad {
-                padding: 25px 10px 5px !important;
-            }
-
-            .row-5 .column-1 .block-2.heading_block td.pad {
-                padding: 0 10px 20px !important;
-            }
-
-            .row-5 .column-1 .block-2.heading_block h1 {
-                font-size: 23px !important;
-            }
-
-            .row-7 .column-1 .block-1.button_block td.pad,
-            .row-9 .column-1 .block-2.button_block td.pad {
-                padding: 20px 10px 25px !important;
-            }
-
-            .row-10 .column-1 .block-4.button_block a,
-            .row-10 .column-1 .block-4.button_block div,
-            .row-10 .column-1 .block-4.button_block span,
-            .row-11 .column-2 .block-4.button_block a,
-            .row-11 .column-2 .block-4.button_block div,
-            .row-11 .column-2 .block-4.button_block span,
-            .row-7 .column-1 .block-1.button_block a,
-            .row-7 .column-1 .block-1.button_block div,
-            .row-7 .column-1 .block-1.button_block span,
-            .row-9 .column-1 .block-2.button_block a,
-            .row-9 .column-1 .block-2.button_block div,
-            .row-9 .column-1 .block-2.button_block span {
-                line-height: 24px !important;
-            }
-
-            .row-8 .column-1 .block-1.heading_block h1 {
+            .row-5 .column-1 .block-1.heading_block h1 {
                 font-size: 14px !important;
             }
 
-            .row-10 .column-1 .block-1.heading_block h1,
-            .row-10 .column-1 .block-2.paragraph_block td.pad>div,
-            .row-10 .column-1 .block-3.heading_block h1,
-            .row-10 .column-1 .block-4.button_block .alignment,
-            .row-10 .column-1 .block-5.paragraph_block td.pad>div,
-            .row-11 .column-2 .block-1.heading_block h1,
-            .row-11 .column-2 .block-2.paragraph_block td.pad>div,
-            .row-11 .column-2 .block-3.heading_block h1,
-            .row-11 .column-2 .block-4.button_block .alignment,
-            .row-9 .column-1 .block-1.paragraph_block td.pad>div {
+            .row-6 .column-1 .block-1.paragraph_block td.pad>div {
                 text-align: center !important;
+            }
+
+            .row-6 .column-1 .block-2.button_block td.pad,
+            .row-9 .column-1 .block-1.button_block td.pad {
+                padding: 20px 10px 25px !important;
+            }
+
+            .row-6 .column-1 .block-2.button_block a,
+            .row-6 .column-1 .block-2.button_block div,
+            .row-6 .column-1 .block-2.button_block span,
+            .row-9 .column-1 .block-1.button_block a,
+            .row-9 .column-1 .block-1.button_block div,
+            .row-9 .column-1 .block-1.button_block span {
+                line-height: 24px !important;
+            }
+
+            .row-7 .column-1 .block-1.heading_block td.pad {
+                padding: 25px 10px 5px !important;
+            }
+
+            .row-7 .column-1 .block-2.heading_block td.pad {
+                padding: 0 10px 20px !important;
+            }
+
+            .row-7 .column-1 .block-2.heading_block h1 {
+                font-size: 23px !important;
             }
 
             .row-1 .column-1,
@@ -218,29 +182,16 @@
                 padding: 10px 20px 5px !important;
             }
 
-            .row-8 .column-1,
-            .row-9 .column-1 {
+            .row-5 .column-1,
+            .row-6 .column-1 {
                 padding: 30px 20px 20px !important;
             }
 
-            .row-10 .column-1 .border,
-            .row-11 .column-2 {
-                padding: 35px 20px 20px !important;
-            }
-
-            .row-10 .column-2 .border {
-                padding: 35px 0 0 !important;
-            }
-
-            .row-11 .column-1 {
-                padding: 35px 20px 0 !important;
-            }
-
-            .row-15 .column-1 {
+            .row-14 .column-1 {
                 padding: 5px 20px 0 !important;
             }
 
-            .row-16 .column-1 {
+            .row-15 .column-1 {
                 padding: 20px !important;
             }
         }
@@ -344,7 +295,7 @@
                                                     <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                         <tr>
                                                             <td class="pad" style="text-align:center;width:100%;">
-                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">{{date('M d, Y', strtotime($mailData['arrival']))}}</span></h3>
+                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">{{date('M d, Y', strtotime($mailData['arrival']))}}</h3>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -360,7 +311,7 @@
                                                     <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                         <tr>
                                                             <td class="pad" style="text-align:center;width:100%;">
-                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">{{date('M d, Y', strtotime($mailData['departure']))}}</span></h3>
+                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">{{date('M d, Y', strtotime($mailData['departure']))}}</h3>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -376,7 +327,7 @@
                                                     <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                         <tr>
                                                             <td class="pad" style="text-align:center;width:100%;">
-                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">{{$mailData['adult']}}</span></h3>
+                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">{{$mailData['adult']}}</h3>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -392,7 +343,7 @@
                                                     <table class="heading_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                         <tr>
                                                             <td class="pad" style="text-align:center;width:100%;">
-                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">{{$mailData['child']}}</span></h3>
+                                                                <h3 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">@if ($mailData['child'] == 0 | $mailData['child'] == null) 0 @else {{$mailData['child']}} @endif</span></h3>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -429,7 +380,7 @@
                                                         <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                             <tr>
                                                                 <td class="pad" style="width:100%;">
-                                                                    <div class="alignment" align="center" style="line-height:10px"><img src="{{$mailData['villa_image']}}" style="display: block; height: auto; border: 0; max-width: 260px; width: 100%;" width="260"></div>
+                                                                    <div class="alignment" align="center" style="line-height:10px"><img src="https://b18fdcdd65.imgdist.com/public/users/Integrators/BeeProAgency/858090_842175/villa.webp" style="display: block; height: auto; border: 0; max-width: 260px; width: 100%;" width="260"></div>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -458,24 +409,15 @@
                                                         <table class="heading_block block-4" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;text-align:center;width:100%;">
-                                                                    <h1 style="margin: 0; color: #1d271c; direction: ltr; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">{{$mailData['villa_title']}}</span></h1>
+                                                                    <h1 style="margin: 0; color: #1d271c; direction: ltr; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;">{{$mailData['villa_title']}}</h1>
                                                                 </td>
                                                             </tr>
                                                         </table>
-                                                        {{-- <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-                                                            <tr>
-                                                                <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;">
-                                                                    <div style="color:#101112;direction:ltr;font-family:Arial, Helvetica, sans-serif;font-size:8px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:9.6px;">
-                                                                        <p style="margin: 0;">48 SQM&nbsp; &nbsp;|&nbsp; &nbsp;KING SIZE BED&nbsp; &nbsp;|&nbsp; &nbsp;JUNGLE VIEW</p>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table> --}}
-                                                        <table class="paragraph_block block-6" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                                        <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;">
                                                                     <div style="color:#101112;direction:ltr;font-family:Arial, Helvetica, sans-serif;font-size:10px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:12px;">
-                                                                        <p style="margin: 0;">{{$mailData['villa_description']}}</p>
+                                                                        <p style="margin: 0;">{!!$mailData['villa_description']!!}</p>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -552,7 +494,7 @@
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;">
                                                                     <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px;">
-                                                                        <p style="margin: 0;">{{$mailData['adult']}} Person(s)</p>
+                                                                        <p style="margin: 0;">{{$mailData['adult']}} Persons</p>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -568,7 +510,7 @@
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;">
                                                                     <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px;">
-                                                                        <p style="margin: 0;">{{$mailData['child']}} Person(s)</p>
+                                                                        <p style="margin: 0;">@if ($mailData['child'] == 0 | $mailData['child'] == null) 0 @else {{$mailData['child']}} @endif Persons</p>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -591,9 +533,7 @@
                                                             <tr>
                                                                 <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;">
                                                                     <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px;">
-                                                                        <p style="margin: 0;">
-                                                                            {!!$mailData['campaign_benefit']!!}
-                                                                        </p>
+                                                                        <p style="margin: 0;">{!!$mailData['campaign_benefit']!!}</p>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -627,7 +567,65 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; border-top: 1px solid #ddd; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-bottom: 0 solid #e3e3e3; border-left: 0 solid #e3e3e3; border-radius: 0; border-right: 0px solid #e3e3e3; border-top: 1px solid #e3e3e3; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                        <tbody>
+                                            <tr>
+                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-top: 30px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                                    <table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td class="pad">
+                                                                <h1 style="margin: 0; color: #393939; direction: ltr; font-family: TimesNewRoman, 'Times New Roman', Times, Beskerville, Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">START YOUR ONLINE CHECK-IN</span></h1>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-bottom: 0 solid #e3e3e3; border-left: 0 solid #e3e3e3; border-radius: 0; border-right: 0px solid #e3e3e3; border-top: 0 solid #e3e3e3; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                        <tbody>
+                                            <tr>
+                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 10px; padding-left: 60px; padding-right: 60px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                                    <table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                                        <tr>
+                                                            <td class="pad" style="padding-bottom:5px;padding-left:60px;padding-right:60px;padding-top:10px;">
+                                                                <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
+                                                                    <p style="margin: 0;">We would like to invite you to begin the online check-in prior to your arrival at the hotel so that you can enjoy the convenience of fast registration. Click the button to proceed</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td class="pad" style="padding-bottom:35px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+                                                                <div class="alignment" align="center">
+                                                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{url('/check-in/'.$mailData['booking_number'])}}" style="height:34px;width:191px;v-text-anchor:middle;" arcsize="0%" stroke="false" fillcolor="#6ea027"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:12px"><![endif]--><a href="{{url('/check-in/'.$mailData['booking_number'])}}" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#6ea027;border-radius:0px;width:auto;border-top:0px solid transparent;font-weight:700;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:12px;display:inline-block;letter-spacing:1px;"><span style="word-break: break-word; line-height: 24px;">ONLINE REGISTRATION</span></span></a>
+                                                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="row row-7" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000; border-top: 1px solid #ddd; width: 900px; margin: 0 auto;" width="900">
                                         <tbody>
                                             <tr>
                                                 <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
@@ -653,7 +651,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-8" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
@@ -676,11 +674,11 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-7" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-9" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-bottom: 1px solid #ddd; border-radius: 0; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000; border-bottom: 0 solid #ddd; width: 900px; margin: 0 auto;" width="900">
                                         <tbody>
                                             <tr>
                                                 <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
@@ -702,127 +700,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-8" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-radius: 0; color: #000; border-bottom: 0 solid #e3e3e3; border-left: 0 solid #e3e3e3; border-right: 0px solid #e3e3e3; border-top: 0 solid #e3e3e3; width: 900px; margin: 0 auto;" width="900">
-                                        <tbody>
-                                            <tr>
-                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-top: 30px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <table class="heading_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad">
-                                                                <h1 style="margin: 0; color: #393939; direction: ltr; font-family: TimesNewRoman, 'Times New Roman', Times, Beskerville, Georgia, serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">START YOUR ONLINE CHECK-IN</span></h1>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="row row-9" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-radius: 0; color: #000; border-bottom: 1px solid #e3e3e3; border-left: 0 solid #e3e3e3; border-right: 0px solid #e3e3e3; border-top: 0 solid #e3e3e3; width: 900px; margin: 0 auto;" width="900">
-                                        <tbody>
-                                            <tr>
-                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 10px; padding-left: 60px; padding-right: 60px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-                                                        <tr>
-                                                            <td class="pad" style="padding-bottom:5px;padding-left:60px;padding-right:60px;padding-top:10px;">
-                                                                <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
-                                                                    <p style="margin: 0;">We would like to invite you to begin the online check-in prior to your arrival at the hotel so that you can enjoy the convenience of fast registration. Click the button to proceed</p>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad" style="padding-bottom:35px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
-                                                                <div class="alignment" align="center">
-                                                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://localhost:8000/check-in/{{$mailData["booking_number"]}}" style="height:34px;width:191px;v-text-anchor:middle;" arcsize="0%" stroke="false" fillcolor="#6ea027"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:12px"><![endif]--><a href="http://localhost:8000/check-in/{{$mailData['booking_number']}}" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#6ea027;border-radius:0px;width:auto;border-top:0px solid transparent;font-weight:700;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:12px;display:inline-block;letter-spacing:1px;"><span style="word-break: break-word; line-height: 24px;">ONLINE REGISTRATION</span></span></a>
-                                                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                     <table class="row row-10" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-radius: 0; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000; border-top: 1px solid #e3e3e3; width: 900px; margin: 0 auto;" width="900">
                                         <tbody>
-                                            <tr class="reverse">
-                                                <td class="column column-1 first" width="66.66666666666667%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; padding-top: 35px; vertical-align: middle; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <div class="border">
-                                                        <table class="heading_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                            <tr>
-                                                                <td class="pad" style="padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;width:100%;">
-                                                                    <h1 style="margin: 0; color: #000000; direction: ltr; font-family: TimesNewRoman, 'Times New Roman', Times, Beskerville, Georgia, serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: right; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">BE AT EASE OF MIND</span></h1>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-                                                            <tr>
-                                                                <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;">
-                                                                    <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:right;mso-line-height-alt:14.399999999999999px;">
-                                                                        <p style="margin: 0;">Book our fully sanitized airport pick-up service for your comfort. Worry-less of COVID-19 with our vaccinated professional driver and fully sanitized vehicle. For maximum of three people with suitcases.</p>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table class="heading_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                            <tr>
-                                                                <td class="pad" style="padding-left:10px;padding-right:10px;text-align:center;width:100%;">
-                                                                    <h1 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: right; margin-top: 0; margin-bottom: 0;">Price at IDR 650,000 per car.</h1>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table class="button_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                            <tr>
-                                                                <td class="pad">
-                                                                    <div class="alignment" align="right">
-                                                                        <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://wa.me/6281236871170" style="height:34px;width:122px;v-text-anchor:middle;" arcsize="3%" stroke="false" fillcolor="#6ea027"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:12px"><![endif]--><a href="https://wa.me/6281236871170" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#6ea027;border-radius:1px;width:auto;border-top:0px solid transparent;font-weight:700;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:12px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word; line-height: 24px;">INQUIRE NOW</span></span></a>
-                                                                        <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                        <table class="paragraph_block block-5" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-                                                            <tr>
-                                                                <td class="pad" style="padding-left:10px;padding-right:10px;">
-                                                                    <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:right;mso-line-height-alt:14.399999999999999px;">
-                                                                        <p style="margin: 0;"><em>VIP Airport Service is also available at additional cost</em></p>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                                <td class="column column-2 last" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 20px; padding-right: 20px; padding-top: 35px; vertical-align: middle; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <div class="border">
-                                                        <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                            <tr>
-                                                                <td class="pad" style="width:100%;">
-                                                                    <div class="alignment" align="center" style="line-height:10px"><img src="https://b18fdcdd65.imgdist.com/public/users/Integrators/BeeProAgency/858090_842175/APV-ARENA-black.jpg" style="display: block; height: auto; border: 0; max-width: 280px; width: 100%;" width="280"></div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
+                                            <tr>
+                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                                    <div class="spacer_block block-1" style="height:60px;line-height:60px;font-size:1px;">&#8202;</div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -835,65 +721,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-radius: 0; color: #000; width: 900px; margin: 0 auto;" width="900">
-                                        <tbody>
-                                            <tr>
-                                                <td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 55px; padding-left: 20px; padding-right: 20px; padding-top: 35px; vertical-align: middle; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad" style="width:100%;">
-                                                                <div class="alignment" align="center" style="line-height:10px"><img src="https://b18fdcdd65.imgdist.com/public/users/Integrators/BeeProAgency/858090_842175/xPzFvdx1tm7ev2j9F3j38tWLcY1xiH-metaNjJkNGVlMzM4MDIyMDc3ODk3MTgzOC5qcGc%3D-.jpg" style="display: block; height: auto; border: 0; max-width: 260px; width: 100%;" width="260"></div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td class="column column-2" width="66.66666666666667%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 55px; padding-right: 20px; padding-top: 35px; vertical-align: middle; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <table class="heading_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad" style="padding-left:10px;padding-right:10px;padding-top:10px;text-align:center;width:100%;">
-                                                                <h1 style="margin: 0; color: #000000; direction: ltr; font-family: TimesNewRoman, 'Times New Roman', Times, Beskerville, Georgia, serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">RELAX ON ARRIVAL</span></h1>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="paragraph_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-                                                        <tr>
-                                                            <td class="pad" style="padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px;">
-                                                                <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:14.399999999999999px;">
-                                                                    <p style="margin: 0;">Take our signature “After-Flight” 30-minutes Foot and Neck massage soon as arrived at the resort to get you<br>in better mood of vacation. Take your holiday directly to the bliss of rejuvenation the moment you step at Nandini Jungle Resort & Spa.</p>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="heading_block block-3" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad" style="padding-left:10px;padding-right:10px;text-align:center;width:100%;">
-                                                                <h1 style="margin: 0; color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;">Price per person IDR 367,500++</h1>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="button_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad">
-                                                                <div class="alignment" align="left">
-                                                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://wa.me/6281236871170" style="height:34px;width:122px;v-text-anchor:middle;" arcsize="3%" stroke="false" fillcolor="#6ea027"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:12px"><![endif]--><a href="https://wa.me/6281236871170" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#6ea027;border-radius:1px;width:auto;border-top:0px solid transparent;font-weight:700;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:12px;display:inline-block;letter-spacing:normal;"><span style="word-break: break-word; line-height: 24px;">INQUIRE NOW</span></span></a>
-                                                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="row row-12" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-left: 0 solid #ddd; border-radius: 0; border-right: 0px solid #ddd; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000; border-left: 0 solid #ddd; border-right: 0px solid #ddd; width: 900px; margin: 0 auto;" width="900">
                                         <tbody>
                                             <tr>
                                                 <td class="column column-1" width="33.333333333333336%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-left: 20px; padding-right: 20px; vertical-align: middle; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
@@ -957,7 +785,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-13" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-12" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
@@ -974,11 +802,11 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-14" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-13" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; border-top: 1px solid #ddd; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; border-radius: 0; color: #000; border-top: 1px solid #ddd; width: 900px; margin: 0 auto;" width="900">
                                         <tbody>
                                             <tr>
                                                 <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 10px; padding-top: 10px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
@@ -997,7 +825,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-15" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-14" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
@@ -1159,7 +987,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-16" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <table class="row row-15" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>
                                 <td>
@@ -1173,43 +1001,6 @@
                                                                 <div style="color:#ffffff;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:10px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:12px;">
                                                                     <p style="margin: 0;"><em><strong>Discover a Luxury Jungle Experience</strong></em><br>Nandini Jungle by Hanging Gardens<br><br>Banjar Susut, Desa Buahan, Kecamatan Payangan, Gianyar – Bali<br>WA: +6281-236-87-1170 | E: info@nandinibali.com<br>www.nandinibali.com</p>
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="row row-17" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 900px; margin: 0 auto;" width="900">
-                                        <tbody>
-                                            <tr>
-                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-                                                    <table class="icons_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                        <tr>
-                                                            <td class="pad" style="vertical-align: middle; color: #9d9d9d; font-family: inherit; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;">
-                                                                <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-                                                                    <tr>
-                                                                        <td class="alignment" style="vertical-align: middle; text-align: center;">
-                                                                            <!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-                                                                            <!--[if !vml]><!-->
-                                                                            <table class="icons-inner" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block; margin-right: -4px; padding-left: 0px; padding-right: 0px;" cellpadding="0" cellspacing="0" role="presentation">
-                                                                                <!--<![endif]-->
-                                                                                <tr>
-                                                                                    <td style="vertical-align: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 6px;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="text-decoration: none;"><img class="icon" alt="Designed with BEE" src="https://d1oco4z2z1fhwp.cloudfront.net/assets/bee.png" height="32" width="34" align="center" style="display: block; height: auto; margin: 0 auto; border: 0;"></a></td>
-                                                                                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #9d9d9d; vertical-align: middle; letter-spacing: undefined; text-align: center;"><a href="https://www.designedwithbee.com/?utm_source=editor&utm_medium=bee_pro&utm_campaign=free_footer_link" target="_blank" style="color: #9d9d9d; text-decoration: none;">Designed with BEE</a></td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
                                                             </td>
                                                         </tr>
                                                     </table>
