@@ -12,7 +12,7 @@
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
-                        <button type="button" class="btn btn-success text-uppercase fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#addRoom"><i class="fa-solid fa-circle-plus me-1"></i> add new</button>
+                        <a href="{{route('room.create')}}" class="btn btn-success text-uppercase fw-bold shadow-lg"><i class="fa-solid fa-circle-plus me-1"></i> add new</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                                 @endif
                             </td>
                             <td>
-                                <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#editRoom{{$data->id}}"><i class="fa-solid fa-pen-to-square text-warning"></i></button>
+                                <a href="{{route('room.edit',$data->id)}}" class="btn btn-datatable btn-icon btn-transparent-dark"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
                                 <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}"><i class="fa-regular fa-trash-can text-danger"></i></button>
 
                                 {{-- Delete Modal --}}
@@ -79,115 +79,11 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                {{-- Edit Modal --}}
-                                <div class="modal fade" id="editRoom{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="editRoom{{$data->id}}Title" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-warning">
-                                                <h5 class="modal-title" id="editRoom{{$data->id}}Title">Edit Guest</h5>
-                                                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="POST" action="{{ route('room.update', [$data->id]) }}" id="editGuestForm{{$data->id}}" enctype="multipart/form-data">
-                                                    @method('PUT')
-                                                    @csrf
-                                                    <div class="mb-3">
-                                                        <label for="title" class="form-label">Title</label>
-                                                        <input class="form-control" id="title" type="text" name="title" value="{{$data->title}}" />
-                                                    </div>
-                                                    <label for="image" class="form-label">Image</label>
-                                                    <div class="mb-3">
-                                                        <input type="file" class="form-control" id="image" name="image">
-                                                        <input type="hidden" name="old_image" value="{{$data->image}}">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="image" class="form-label">Current mage</label><br>
-                                                        <img src="{{asset('storage/'.$data->image)}}" style="width: 100px">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="form-label">Description</label>
-                                                        <input class="form-control" id="title" type="text" name="description" value="{{$data->description}}" />
-                                                        {{-- <textarea class="form-control" name="description" rows="5">
-                                                            {{$data->description}}
-                                                        </textarea>
-                                                    </div>
-                                                    @push('js')
-                                                    <script>
-                                                        ClassicEditor
-                                                        .create( document.querySelector( '#descriptionRoom{{$data->id}}' ) )
-                                                        .catch( error => {
-                                                            console.error( error );
-                                                        } );
-                                                    </script>
-                                                    @endpush --}}
-                                                    <div class="mb-3">
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" role="switch" id="statusEdit" name="status" value="1" @if ($data->status == '1') checked @else @endif>
-                                                            <label class="form-check-label" for="statusEdit">Publish</label>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-outline-danger" type="button" data-bs-dismiss="modal">
-                                                    <i class="fa-solid fa-xmark me-1"></i> Cancel
-                                                </button>
-                                                <button class="btn btn-success" type="submit" form="editGuestForm{{$data->id}}">
-                                                    <i class="fa-regular fa-floppy-disk me-1"></i> Update
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Create-->
-    <div class="modal fade" id="addRoom" tabindex="-1" role="dialog" aria-labelledby="addRoomTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addRoomTitle">New Room</h5>
-                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" action="{{ route('room.store') }}" id="addRoomForm" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input class="form-control" id="title" type="text" name="title" />
-                        </div>
-                        <label for="image" class="form-label">Image</label>
-                        <div class="mb-3">
-                            <input type="file" class="form-control" id="image" name="image">
-                        </div>
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="5"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="statusCreate" name="status" value="1" checked>
-                                <label class="form-check-label" for="status">Publish</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-outline-danger" type="button" data-bs-dismiss="modal">
-                        <i class="fa-solid fa-xmark me-1"></i> Cancel
-                    </button>
-                    <button class="btn btn-success" type="submit" form="addRoomForm">
-                        <i class="fa-regular fa-floppy-disk me-1"></i> Save
-                    </button>
-                </div>
             </div>
         </div>
     </div>

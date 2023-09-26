@@ -22,7 +22,7 @@ class VillaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.villa.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class VillaController extends Controller
             'image' => $image,
             'status' => $request->status,
         ]);
-        return redirect()->back()->with('message', 'Room created Successfully');
+        return redirect()->route('room.index')->with('message', 'Room created Successfully');
     }
 
     /**
@@ -58,7 +58,8 @@ class VillaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $detail = Villa::find($id);
+        return view('admin.villa.edit')->with(compact('detail'));
     }
 
     /**
@@ -77,7 +78,7 @@ class VillaController extends Controller
         $data->image = $image;
         $data->status = $request->status;
         $data->save();
-        return redirect()->back()->with('message', 'Room updated Successfully');
+        return redirect()->route('room.index')->with('message', 'Room updated Successfully');
     }
 
     /**
@@ -88,6 +89,6 @@ class VillaController extends Controller
         $data = Villa::find($id);
         $data->delete();
 
-        return redirect()->back()->with('message', 'Item deleted Successfully');
+        return redirect()->route('room.index')->with('message', 'Item deleted Successfully');
     }
 }

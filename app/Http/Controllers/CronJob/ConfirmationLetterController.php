@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ConfirmationLetter;
 use App\Models\Booking;
 use App\Models\Guest;
+use App\Models\Setting;
 use App\Models\Villa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -18,6 +19,8 @@ class ConfirmationLetterController extends Controller
     public function index()
     {
         $booking = Booking::where('confirmation_letter_status', '=', '0')->first();
+        $banner = Setting::where('id', '1')->first();
+        $logo = Setting::where('id', '2')->first();
         // $villa = Villa::where('id', '=', $booking->villa->villa_id)->where('status', '=', '1')->first();
 
         $mailData = [
@@ -39,6 +42,10 @@ class ConfirmationLetterController extends Controller
 
             // guest
             'guest_full_name' => $booking->guest->title . " " . $booking->guest->first_name . " " . $booking->guest->last_name,
+
+            // confirmation letter
+            'banner' => $banner->image,
+            'logo' => $logo->image,
         ];
 
         Mail::to($booking->guest->email)
