@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\CronJob\ConfirmationLetterController;
 use App\Http\Controllers\CronJob\PostStayLetterController;
 use App\Http\Controllers\CronJob\PreArrivalLetterController;
+use App\Http\Controllers\Front\AdditionalRequestController;
 use App\Http\Controllers\Front\CheckInController;
 use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
@@ -40,12 +41,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('check-in.index');
 });
+
+// CheckIn
 Route::resource('/check-in', HomeController::class);
 Route::resource('/check-in/guest-detail', GuestDetailController::class);
 Route::resource('/check-in/upload-passport', PassportController::class);
 Route::resource('/check-in/upload-credit-card', CreditCardController::class);
 Route::resource('/check-in/checkin', CheckInController::class);
 Route::resource('/check-in/complete/thank-you', ThankYouController::class);
+Route::resource('/check-in/additional-request', AdditionalRequestController::class);
 
 // CronJob
 Route::resource('/cron-job/confirmation-letter', ConfirmationLetterController::class);
