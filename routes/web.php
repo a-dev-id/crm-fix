@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\CronJob\ConfirmationLetterController;
 use App\Http\Controllers\CronJob\PostStayLetterController;
 use App\Http\Controllers\CronJob\PreArrivalLetterController;
-use App\Http\Controllers\Front\AdditionalRequestController;
+use App\Http\Controllers\Front\BookingExperienceController;
 use App\Http\Controllers\Front\CheckInController;
 use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
@@ -49,7 +49,7 @@ Route::resource('/check-in/upload-passport', PassportController::class);
 Route::resource('/check-in/upload-credit-card', CreditCardController::class);
 Route::resource('/check-in/checkin', CheckInController::class);
 Route::resource('/check-in/complete/thank-you', ThankYouController::class);
-Route::resource('/check-in/additional-request', AdditionalRequestController::class);
+Route::resource('/check-in/additional-request', BookingExperienceController::class);
 
 // CronJob
 Route::resource('/cron-job/confirmation-letter', ConfirmationLetterController::class);

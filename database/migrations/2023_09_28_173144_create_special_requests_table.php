@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('additional_requests', function (Blueprint $table) {
+        Schema::create('special_requests', function (Blueprint $table) {
             $table->id();
             $table->integer('booking_number')->nullable();
-            $table->integer('experience_id')->nullable();
+            $table->string('title')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('price')->nullable();
+            $table->string('note')->nullable();
+            $table->string('image')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('additional_requests');
+        Schema::dropIfExists('special_requests');
     }
 };

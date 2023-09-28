@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\BookingExperience;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 
-class AdditionalRequestController extends Controller
+class BookingExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.

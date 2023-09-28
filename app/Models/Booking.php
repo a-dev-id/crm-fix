@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Booking extends Model
 {
@@ -47,5 +48,10 @@ class Booking extends Model
     public function villa(): BelongsTo
     {
         return $this->belongsTo(Villa::class, 'villa_id', 'id');
+    }
+
+    public function Experiences(): BelongsToMany
+    {
+        return $this->belongsToMany(Experience::class);
     }
 }

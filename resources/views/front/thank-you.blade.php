@@ -1,3 +1,6 @@
+@section('title')
+Thank you | {{ config('app.name') }}
+@endsection
 @section('navigation')
 <a class="navbar-brand text-white" href="{{url('/')}}"><i class="fa-solid fa-house ms-3"></i></a>
 @endsection

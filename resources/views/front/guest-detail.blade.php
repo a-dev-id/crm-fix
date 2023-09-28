@@ -1,3 +1,6 @@
+@section('title')
+Check-in | {{ config('app.name') }}
+@endsection
 @section('navigation')
 <a class="navbar-brand text-white" href="{{url()->previous()}}"><i class="fa-solid fa-arrow-left me-2"></i> Back</a>
 @endsection
