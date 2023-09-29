@@ -633,7 +633,7 @@
                                                         <tr>
                                                             <td class="pad" style="padding-bottom:5px;padding-left:60px;padding-right:60px;padding-top:10px;">
                                                                 <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
-                                                                    <p style="margin: 0;">do you have any Special Request? click the button below</p>
+                                                                    <p style="margin: 0;">Take a look at our special offers to enhance your stay</p>
                                                                 </div>
                                                             </td>
                                                         </tr>
