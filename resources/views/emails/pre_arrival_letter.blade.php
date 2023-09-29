@@ -614,6 +614,41 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fefefe; border-bottom: 0 solid #e3e3e3; border-left: 0 solid #e3e3e3; border-radius: 0; border-right: 0px solid #e3e3e3; border-top: 0 solid #e3e3e3; color: #000; width: 900px; margin: 0 auto;" width="900">
+                                        <tbody>
+                                            <tr>
+                                                <td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; padding-bottom: 10px; padding-left: 60px; padding-right: 60px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+                                                    <table class="paragraph_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+                                                        <tr>
+                                                            <td class="pad" style="padding-bottom:5px;padding-left:60px;padding-right:60px;padding-top:10px;">
+                                                                <div style="color:#101112;direction:ltr;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:14.399999999999999px;">
+                                                                    <p style="margin: 0;">do you have any Special Request? click the button below</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="button_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td class="pad" style="padding-bottom:35px;padding-left:10px;padding-right:10px;padding-top:20px;text-align:center;">
+                                                                <div class="alignment" align="center">
+                                                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{url('/check-in/special-request/'.$mailData['booking_number'])}}" style="height:34px;width:191px;v-text-anchor:middle;" arcsize="0%" stroke="false" fillcolor="#6ea027"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Tahoma, Verdana, sans-serif; font-size:12px"><![endif]--><a href="{{url('/check-in/special-request/'.$mailData['booking_number'])}}" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#6ea027;border-radius:0px;width:auto;border-top:0px solid transparent;font-weight:700;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;font-size:12px;text-align:center;mso-border-alt:none;word-break:keep-all;"><span style="padding-left:20px;padding-right:20px;font-size:12px;display:inline-block;letter-spacing:1px;"><span style="word-break: break-word; line-height: 24px;">SPECIAL REQUEST</span></span></a>
+                                                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <table class="row row-7" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                         <tbody>
                             <tr>

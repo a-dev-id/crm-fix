@@ -28,7 +28,7 @@ class PreArrivalLetter extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Booking Reconfirm - Elevate Bali',
+            subject: 'Booking Reconfirm - Nandini Jungle by Hanging Gardens',
         );
     }
 

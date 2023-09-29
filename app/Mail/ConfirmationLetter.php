@@ -28,7 +28,7 @@ class ConfirmationLetter extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Booking Confirmation - Elevate Bali',
+            subject: 'Booking Confirmation - Nandini JUngle by Hanging Gardens',
         );
     }
 

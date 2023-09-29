@@ -115,7 +115,9 @@ Special Request | {{ config('app.name') }}
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    @if ($data->status == '1')
+                                    @if ($data->approve == '1')
+                                    <button type="button" class="btn btn-success float-end" disabled>Approved<i class="fa-solid fa-check ms-2"></i></button>
+                                    @elseif($data->status == '1' && $data->approve == null || $data->approve == '0')
                                     <button type="button" class="btn btn-warning float-end" disabled>On progress<i class="fa-solid fa-hourglass-half ms-2"></i></button>
                                     @else
                                     <button type="button" class="btn btn-danger float-end" data-bs-toggle="modal" data-bs-target="#deleteRequestModal{{$data->id}}">Remove<i class="fa-regular fa-trash-can ms-2"></i></button>

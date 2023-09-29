@@ -28,7 +28,7 @@ class PostStayLetter extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thank You - Elevate Bali',
+            subject: 'Thank You - Nandini Jungle by Hanging Gardens',
         );
     }
 

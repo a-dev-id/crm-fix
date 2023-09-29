@@ -28,7 +28,7 @@ class SpecialRequestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Special Request - Elevate Bali',
+            subject: 'Special Request - Nandini Jungle by Hanging Gardens',
         );
     }
 
