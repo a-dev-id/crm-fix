@@ -24,26 +24,28 @@
                     <div class="card-body">
                         <div class="accordion">
 
+                            @foreach ($check_in_today as $data)
                             <div class="accordion-item">
                                 <div class="accordion-header">
-                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#target8137822" aria-expanded="false" aria-controls="target8137822">
-                                        Mr. John Doe
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#checkin{{$data->id}}" aria-expanded="false" aria-controls="checkin{{$data->id}}">
+                                        {{$data->guest->title.' '.$data->guest->first_name.' '.$data->guest->last_name}}
                                     </button>
                                 </div>
-                                <div id="target8137822" class="accordion-collapse collapse">
+                                <div id="checkin{{$data->id}}" class="accordion-collapse collapse">
                                     <div class="accordion-body p-0">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item text-xs">Booking Number: <strong>813782</strong></li>
-                                            <li class="list-group-item text-xs">Arrival: <strong>21 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Departure: <strong>23 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Adult: <strong>2 person(s)</strong></li>
-                                            <li class="list-group-item text-xs">Child: <strong>0 person(s)</strong></li>
-                                            <li class="list-group-item text-xs"><a href="#" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
+                                            <li class="list-group-item text-xs">Booking Number: <strong>{{$data->booking_number}}</strong></li>
+                                            <li class="list-group-item text-xs">Arrival: <strong>{{date('M d, Y', strtotime($data->arrival))}}</strong></li>
+                                            <li class="list-group-item text-xs">Departure: <strong>{{date('M d, Y', strtotime($data->departure))}}</strong></li>
+                                            <li class="list-group-item text-xs">Adult: <strong>{{$data->adult}} person(s)</strong></li>
+                                            <li class="list-group-item text-xs">Child: <strong>@if ($data->child == null) 0 @else {{$data->child}} @endif person(s)</strong></li>
+                                            <li class="list-group-item text-xs"><a href="{{route('booking.show',$data->id)}}" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
                                         </ul>
 
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
                         </div>
                     </div>
@@ -55,26 +57,28 @@
                     <div class="card-body">
                         <div class="accordion">
 
+                            @foreach ($arrival_today as $data)
                             <div class="accordion-item">
                                 <div class="accordion-header">
-                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#target813782" aria-expanded="false" aria-controls="target813782">
-                                        Mr. John Doe
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#arrival{{$data->id}}" aria-expanded="false" aria-controls="arrival{{$data->id}}">
+                                        {{$data->guest->title.' '.$data->guest->first_name.' '.$data->guest->last_name}}
                                     </button>
                                 </div>
-                                <div id="target813782" class="accordion-collapse collapse">
+                                <div id="arrival{{$data->id}}" class="accordion-collapse collapse">
                                     <div class="accordion-body p-0">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item text-xs">Booking Number: <strong>813782</strong></li>
-                                            <li class="list-group-item text-xs">Arrival: <strong>21 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Departure: <strong>23 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Adult: <strong>2 person(s)</strong></li>
-                                            <li class="list-group-item text-xs">Child: <strong>0 person(s)</strong></li>
-                                            <li class="list-group-item text-xs"><a href="#" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
+                                            <li class="list-group-item text-xs">Booking Number: <strong>{{$data->booking_number}}</strong></li>
+                                            <li class="list-group-item text-xs">Arrival: <strong>{{date('M d, Y', strtotime($data->arrival))}}</strong></li>
+                                            <li class="list-group-item text-xs">Departure: <strong>{{date('M d, Y', strtotime($data->departure))}}</strong></li>
+                                            <li class="list-group-item text-xs">Adult: <strong>{{$data->adult}} person(s)</strong></li>
+                                            <li class="list-group-item text-xs">Child: <strong>@if ($data->child == null) 0 @else {{$data->child}} @endif person(s)</strong></li>
+                                            <li class="list-group-item text-xs"><a href="{{route('booking.show',$data->id)}}" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
                                         </ul>
 
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
                         </div>
                     </div>
@@ -86,27 +90,28 @@
                     <div class="card-body">
                         <div class="accordion">
 
+                            @foreach ($departure_today as $data)
                             <div class="accordion-item">
                                 <div class="accordion-header">
-                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#target8137821" aria-expanded="false" aria-controls="target8137821">
-                                        Mr. John Doe
+                                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#departure{{$data->id}}" aria-expanded="false" aria-controls="departure{{$data->id}}">
+                                        {{$data->guest->title.' '.$data->guest->first_name.' '.$data->guest->last_name}}
                                     </button>
                                 </div>
-                                <div id="target8137821" class="accordion-collapse collapse">
+                                <div id="departure{{$data->id}}" class="accordion-collapse collapse">
                                     <div class="accordion-body p-0">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item text-xs">Booking Number: <strong>813782</strong></li>
-                                            <li class="list-group-item text-xs">Arrival: <strong>21 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Departure: <strong>23 Sept 2023</strong></li>
-                                            <li class="list-group-item text-xs">Adult: <strong>2 person(s)</strong></li>
-                                            <li class="list-group-item text-xs">Child: <strong>0 person(s)</strong></li>
-                                            <li class="list-group-item text-xs">Room: <strong>Panoramic Villa</strong></li>
-                                            <li class="list-group-item text-xs"><a href="#" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
+                                            <li class="list-group-item text-xs">Booking Number: <strong>{{$data->booking_number}}</strong></li>
+                                            <li class="list-group-item text-xs">Arrival: <strong>{{date('M d, Y', strtotime($data->arrival))}}</strong></li>
+                                            <li class="list-group-item text-xs">Departure: <strong>{{date('M d, Y', strtotime($data->departure))}}</strong></li>
+                                            <li class="list-group-item text-xs">Adult: <strong>{{$data->adult}} person(s)</strong></li>
+                                            <li class="list-group-item text-xs">Child: <strong>@if ($data->child == null) 0 @else {{$data->child}} @endif person(s)</strong></li>
+                                            <li class="list-group-item text-xs"><a href="{{route('booking.show',$data->id)}}" class="btn btn-outline-success fw-bold"><i class="fa-regular fa-eye me-2"></i>View Detail</a></li>
                                         </ul>
 
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
                         </div>
                     </div>

@@ -18,7 +18,7 @@ class ConfirmationLetterController extends Controller
      */
     public function index()
     {
-        $booking = Booking::where('check_in_status', '1')->where('confirmation_letter_status', '0')->first();
+        $booking = Booking::where('confirmation_letter_status', '0')->first();
 
         $mailData = [
             'booking_number' => $booking->booking_number,

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('note')->nullable();
             $table->string('image')->nullable();
             $table->integer('status')->nullable();
+            $table->integer('approve')->nullable();
             $table->timestamps();
         });
     }

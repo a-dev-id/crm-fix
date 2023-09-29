@@ -7,6 +7,7 @@ use App\Models\Booking;
 use App\Models\CheckIn;
 use App\Models\Country;
 use App\Models\Guest;
+use App\Models\SpecialRequest;
 use App\Models\Title;
 use App\Models\Villa;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class BookingController extends Controller
         $guests = Guest::all();
         $titles = Title::all();
         $villas = Villa::all();
-        $bookings = Booking::all();
+        $bookings = Booking::latest()->get();
         return view('admin.booking.index')->with(compact('bookings', 'guests', 'titles', 'villas'));
     }
 
@@ -71,11 +72,12 @@ class BookingController extends Controller
     public function show(string $id)
     {
         $detail = Booking::find($id);
-        $guests = Guest::where('booking_number', '=', $detail->booking_number)->get();
+        $guests = Guest::where('booking_number', $detail->booking_number)->get();
         $villas = Villa::all();
         $titles = Title::all();
         $countries = Country::all();
-        return view('admin.booking.show')->with(compact('detail', 'guests', 'villas', 'titles', 'countries'));
+        $special_requests = SpecialRequest::where('booking_number', $detail->booking_number)->get();
+        return view('admin.booking.show')->with(compact('detail', 'guests', 'villas', 'titles', 'countries', 'special_requests'));
     }
 
     /**

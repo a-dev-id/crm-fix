@@ -136,6 +136,85 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-12">
+                <div class="card mb-4">
+                    <div class="card-header">Special Request</div>
+                    <div class="card-body row">
+                        @foreach ($special_requests as $data)
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card">
+                                <div class="ratio ratio-16x9">
+                                    <img src="{{asset('storage/'.$data->image)}}" class="w-100 object-fit-cover object-position-center card-img-top">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        <h4>{{$data->title}}</h4>
+                                        <div class="mt-3" style="font-size:12px !important" class="mb-3">{!! $data->description !!}</div>
+                                        <p class="fw-bold p-0 m-0"><i>{{$data->price}}</i></p>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between">
+                                    @if ($data->approve == '1')
+                                    <button type="button" class="btn btn-success" disabled>Approved<i class="fa-solid fa-check ms-2"></i></button>
+                                    @else
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRequestModal{{$data->id}}">Remove<i class="fa-regular fa-trash-can ms-2"></i></button>
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#approveRequestModal{{$data->id}}">Approve<i class="fa-solid fa-question ms-2"></i></button>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delete Request -->
+                        <div class="modal fade" id="deleteRequestModal{{$data->id}}" tabindex="-1" aria-labelledby="deleteRequestModal{{$data->id}}Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-danger text-white">
+                                        <h1 class="modal-title fs-5" id="deleteRequestModal{{$data->id}}Label"><i class="fa-solid fa-triangle-exclamation me-2"></i>Attention</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure want to remove the <span class="fw-bold">"{{$data->title}}"</span> approve?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancel<i class="fa-solid fa-xmark ms-2"></i></button>
+                                        <form method="POST" action="{{ route('check-special-request.destroy', [$data->id]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit"><i class="fa-regular fa-trash-can me-1"></i> Remove</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Approve Request -->
+                        <div class="modal fade" id="approveRequestModal{{$data->id}}" tabindex="-1" aria-labelledby="approveRequestModal{{$data->id}}Label" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning text-white">
+                                        <h1 class="modal-title fs-5" id="approveRequestModal{{$data->id}}Label"><i class="fa-solid fa-triangle-exclamation me-2"></i>Attention</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure want to approve the <span class="fw-bold">"{{$data->title}}"</span> approve?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel<i class="fa-solid fa-xmark ms-2"></i></button>
+                                        <form method="POST" action="{{ route('check-special-request.update', [$data->id]) }}">
+                                            @csrf
+                                            @method('PUT')
+                                            <button class="btn btn-success" type="submit">Approve<i class="fa-solid fa-check ms-2"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
             <div class="col-lg-12">
                 <div class="row">
                     @foreach ($guests as $data)

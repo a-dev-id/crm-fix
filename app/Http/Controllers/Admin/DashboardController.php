@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +13,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $check_in_today = Booking::where('check_in_status', '1')->whereRaw('date(updated_at) = curdate()')->get();
+        $arrival_today = Booking::whereRaw('date(arrival) = curdate()')->get();
+        $departure_today = Booking::whereRaw('date(departure) = curdate()')->get();
+        return view('admin.dashboard.index')->with(compact('check_in_today', 'arrival_today', 'departure_today'));
     }
 
     /**

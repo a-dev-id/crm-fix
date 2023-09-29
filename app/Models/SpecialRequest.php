@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class SpecialRequest extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'booking_number',
+        'title',
+        'description',
+        'price',
+        'note',
+        'image',
+        'status',
+        'approve',
+    ];
 }

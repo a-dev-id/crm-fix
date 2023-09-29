@@ -24,6 +24,8 @@
 
     </style>
 
+    @stack('css')
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -180,6 +182,7 @@
     <script>
         $('.guest_id').selectpicker();
     </script>
+    @stack('js')
 </body>
 
 </html>

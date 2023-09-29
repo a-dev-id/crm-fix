@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BookingController;
+use App\Http\Controllers\Admin\CheckSpecialRequestController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\GuestController;
@@ -9,12 +10,12 @@ use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\CronJob\ConfirmationLetterController;
 use App\Http\Controllers\CronJob\PostStayLetterController;
 use App\Http\Controllers\CronJob\PreArrivalLetterController;
-use App\Http\Controllers\Front\BookingExperienceController;
 use App\Http\Controllers\Front\CheckInController;
 use App\Http\Controllers\Front\CreditCardController;
 use App\Http\Controllers\Front\GuestDetailController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\PassportController;
+use App\Http\Controllers\Front\SpecialRequestController;
 use App\Http\Controllers\Front\ThankYouController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,7 +50,7 @@ Route::resource('/check-in/upload-passport', PassportController::class);
 Route::resource('/check-in/upload-credit-card', CreditCardController::class);
 Route::resource('/check-in/checkin', CheckInController::class);
 Route::resource('/check-in/complete/thank-you', ThankYouController::class);
-Route::resource('/check-in/additional-request', BookingExperienceController::class);
+Route::resource('/check-in/special-request', SpecialRequestController::class);
 
 // CronJob
 Route::resource('/cron-job/confirmation-letter', ConfirmationLetterController::class);
@@ -64,6 +65,7 @@ Route::middleware('auth')->prefix('panel/admin')->group(function () {
     Route::resource('room', VillaController::class);
     Route::resource('experience', ExperienceController::class);
     Route::resource('setting', SettingController::class);
+    Route::resource('check-special-request', CheckSpecialRequestController::class);
 });
 
 require __DIR__ . '/auth.php';
