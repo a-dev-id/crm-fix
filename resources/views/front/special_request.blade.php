@@ -160,7 +160,12 @@ Special Request | {{ config('app.name') }}
                     <form class="d-grid gap-2" method="POST" action="{{ route('special-request.update', $check_booking_number->booking_number) }}">
                         @csrf
                         @method('PUT')
+                        @if ($special_request_count == '0')
+                        <button type="submit" class="btn btn-success py-3 fw-bold" disabled>SUBMIT REQUEST<i class="fa-regular fa-floppy-disk ms-2"></i></button>
+                        @else
                         <button type="submit" class="btn btn-success py-3 fw-bold">SUBMIT REQUEST<i class="fa-regular fa-floppy-disk ms-2"></i></button>
+                        @endif
+
                     </form>
                 </div>
             </div>

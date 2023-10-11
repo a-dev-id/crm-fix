@@ -54,8 +54,8 @@ class SpecialRequestController extends Controller
 
         if ($check_booking_number == null) {
             return redirect()->route('check-in.index')->with('message', 'Invalid Data');
-        } elseif ($check_booking_number->check_in_status == null) {
-            return redirect()->route('check-in.index')->with('message', 'Please check-in first');
+            // } elseif ($check_booking_number->check_in_status == null) {
+            //     return redirect()->route('check-in.index')->with('message', 'Please check-in first');
         } else {
 
             $check_special_request = SpecialRequest::where('booking_number', $check_booking_number->booking_number)->get();
@@ -94,7 +94,7 @@ class SpecialRequestController extends Controller
 
         // Mail::to($booking->guest->email)
         Mail::to('3xasov@gmail.com')
-            ->cc('3xasov@gmail.com')
+            ->cc($booking->guest->email)
             ->send(new SpecialRequestMail($mailData));
 
         foreach ($special_requests as $data) {

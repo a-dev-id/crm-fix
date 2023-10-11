@@ -10,8 +10,8 @@ Check-in | {{ config('app.name') }}
             <div class="col-12 col-md-6">
                 <h2 class="text-center mb-4">Room Detail</h2>
                 <div class="card mb-5">
-                    {{-- <img src="{{asset('storage/'.$booking->villa->image)}}" class="card-img-top" alt="..."> --}}
-                    <img src="{{asset($booking->villa->image)}}" class="card-img-top" alt="...">
+                    <img src="{{asset('storage/'.$booking->villa->image)}}" class="card-img-top" alt="...">
+                    {{-- <img src="{{asset($booking->villa->image)}}" class="card-img-top" alt="..."> --}}
                     <div class="card-body">
                         <div class="card-text">
                             <div class="d-flex justify-content-between text-center mb-4 py-2" style="font-size:12px !important">
@@ -72,7 +72,11 @@ Check-in | {{ config('app.name') }}
                     <form method="POST" action="{{ route('checkin.update', [$booking->id]) }}">
                         @method('PUT')
                         @csrf
-                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" @if ($booking->check_in_status == '1') disabled @else @endif>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
+                        @if ($booking->check_in_status == '1')
+                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" disabled>CHECKED IN <i class=" fa-regular fa-circle-check ms-2"></i></button>
+                        @else
+                        <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%">CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>
+                        @endif
                     </form>
                     @else
                     <button type="submit" class="btn btn-success py-3 fw-bold" style="width: 100%" disabled>CHECK IN <i class="fa-solid fa-arrow-right ms-2"></i></button>

@@ -8,6 +8,7 @@ use App\Models\Booking;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class PreArrivalLetterController extends Controller
 {
@@ -16,8 +17,7 @@ class PreArrivalLetterController extends Controller
      */
     public function index()
     {
-        $booking = Booking::where('check_in_status', '1')->where('confirmation_letter_status', '1')->where('pre_arrival_status', null)->first();
-
+        $booking = Booking::where('confirmation_letter_status', '1')->where('pre_arrival_status', null)->whereRaw('DATE_SUB(`arrival`, INTERVAL 3 DAY) <= NOW()')->first();
         $mailData = [
             'booking_number' => $booking->booking_number,
             'arrival' => $booking->arrival,
